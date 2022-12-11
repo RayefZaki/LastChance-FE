@@ -6,6 +6,7 @@ import {
 import Router1 from "./components/Router1"
 import {Routes,Route,BrowserRouter}from 'react-router-dom';
 import LoginForm from "./components/Forms/LoginForm";
+import './App.css'
 
 
 

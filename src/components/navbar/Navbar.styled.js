@@ -52,13 +52,13 @@ export const Wrapper = styled.nav`
             border-radius: 12px;
             margin-bottom:5px;
             position:relative;
-            background-color:#323776;
+            background-color:#A259FF;
             transform-origin: 0 0;
             transition:0.4s
         }
         &:hover span:nth-child(2){
                 transform: translateX(10px);
-                background-color: #323776;
+                background-color: #A259FF;
             }
     }
 
@@ -76,7 +76,7 @@ export const Wrapper = styled.nav`
     }
 
     .hamburger.is__active:hover span{
-        background-color:#FFFFFF
+        background-color:#A259FF
     }
 
     .nav__list_item{
@@ -115,15 +115,15 @@ export const NavLink = styled.a`
     // here to hide number of navbar
 
     
-    // &:before{
-    //     content: "0" counter(section) ".";
-    //     margin-right: 5px;
-    //     color: #FFFFFF;
-    //     font-size: 14px;
-    //     text-align: right;
-    // }
+    &:before{
+        // content: "0" counter(section) ".";
+        margin-right: 5px;
+        color: #000000;
+        font-size: 14px;
+        text-align: right;
+    }
     &:hover{
-        color: #7E82B1;
+        color: #2b2b2b;
     }
 `;
 
@@ -138,7 +138,7 @@ export const MobileNav = styled.nav`
     width:100%;
     min-height:100vh;
     z-index:98;
-    background-color:#251749;
+    background-color:#2b2b2b;
     .list__lists{
         display: flex;
         flex-direction:column;

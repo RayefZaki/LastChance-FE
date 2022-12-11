@@ -60,8 +60,10 @@ import Navbar from '../components/navbar/Navbar';
   
     return (
 
-      <><Navbar links={[{ link: "/", alias: "About" }, { link: "/", alias: "Experience" }, { link: "/", alias: "CREATE ACCOUNT" }, { link: "/", alias: "SIGN IN" },]} logo={'https://media.discordapp.net/attachments/1036228185756541008/1051215907659190422/logo_transparent.png?width=936&height=936'} /><Flex justifyContent='center' alignItems='center' height='100vh'>
-        <VStack spacing='2rem' width='20rem'>
+      <><Navbar links={[  { link: "/", alias: "REGISTER" }, { link: "/", alias: "LOG IN" },]} logo={'https://media.discordapp.net/attachments/1036228185756541008/1051215907659190422/logo_transparent.png?width=936&height=936'} />
+      <Flex justifyContent='center' alignItems='center' height='100vh'>
+        <VStack 
+        spacing='2rem' width='20rem'>
           <Heading>Login </Heading>
           <LoginForm
             username={username}
@@ -74,6 +76,8 @@ import Navbar from '../components/navbar/Navbar';
             <Link to='/register'>Register</Link>
           </HStack>
         </VStack>
-      </Flex></>
+      </Flex>
+      </>
+
     );
   };
