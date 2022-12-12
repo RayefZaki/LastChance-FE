@@ -2,6 +2,7 @@ import { VStack, Input, Button, Text, Box } from '@chakra-ui/react';
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../../App.css'
 
 interface ILoginForm {
   username: string;
@@ -19,7 +20,9 @@ const LoginForm = ({
   setPassword,
 }: ILoginForm) => {
   return (
-    <VStack align='left' spacing='1rem' width='100%'>
+    <VStack
+    
+    align='left' spacing='1rem' width='100%'>
       <Box>
         <Text>Username</Text>
         <Input

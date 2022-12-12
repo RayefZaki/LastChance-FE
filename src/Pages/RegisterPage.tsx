@@ -8,6 +8,11 @@ import {
     Button,
     useToast,
     HStack,
+    Checkbox,
+    FormControl,
+    FormLabel,
+    Stack,
+    Image
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { Link, useNavigate } from 'react-router-dom';
@@ -23,7 +28,7 @@ import {
   
     const toast = useToast();
   
-    const Register = async () => {
+    const submitRegister = async () => {
       try {
         if (password !== password2) {
           toast({
@@ -73,48 +78,62 @@ import {
     };
   
     return (
-      <Flex textColor={"white"} justifyContent={'center'}
-      alignItems={'center'} height={'100vh'}
-       bg={"blue.100"} fontSize={'1xl'}>
-     <Box bg={"blue.900"} borderRadius={"md"} height={'600px'} width={'400px'}>
-         <VStack padding={'5'}>
-         <VStack textAlign={'left'} padding={'2'}>
-             <Text >Username</Text>
-             <Input type={"text"} width={'200'}
-             value={username} placeholder={'Username'}
-              onChange={(e)=>setUsername(e.target.value)}></Input>
-         </VStack>
-         <VStack textAlign={'left'} padding={'2'}>
-             <Text >Password</Text>
-             <Input type={"password"} placeholder={'Password'} width={'200'} 
-               onChange={(e)=>setPassword(e.target.value)} 
-               ></Input>
-         </VStack>
-         <VStack textAlign={'left'} padding={'2'}>
-             <Text >Confirm Password</Text>
-             <Input type={"password"} width={'200'} 
-               onChange={(e)=>setPassword2(e.target.value)}
-               placeholder={'Confirm Password'}></Input>
-         </VStack>
-         <VStack textAlign={'left'} padding={'2'}>
-             <Text >Email</Text>
-             <Input type={"email"} width={'200'} 
-             onChange={(e)=>setEmail(e.target.value)}
-             placeholder={'Email'}></Input>
-         </VStack>
-         <VStack textAlign={'left'} padding={'2'}>
-             <Text >IBAN</Text>
-             <Input type={"text"} width={'200'} 
-             onChange={(e)=>setIBAN(e.target.value)} placeholder={'IBAN'}></Input>
-         </VStack>
-         <Button onClick={Register} width={'200px'} color={'black'}>Register</Button>
-         <HStack>
-             <Text marginRight={'1'}>Go to</Text>
-             <Link to={'/login'}>Login?</Link>
-         </HStack>
-         </VStack>
-     </Box>
+      <>
+      <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+  <Flex flex={1}>
+    <Image
+      alt={'Login Image'}
+      objectFit={'cover'}
+      src={
+        'https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png'
+      }
+    />
+  </Flex>
+  <Flex p={8} flex={1} align={'center'} justify={'center'}>
+    <Stack border={'1px solid white'}  padding={'14'}  color={"white"} spacing={4} w={'200'} maxW={'md'}>
+    <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
+            ></Image>
+      <Heading fontSize={'2xl'}>Create Account</Heading>
+      <Text>Enter Your Information </Text>
+      <FormControl id="username">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Username'} onChange={(e) => setUsername(e.target.value)}  value={username} type="username" />
+      </FormControl>
+      <FormControl id="email">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Email'} onChange={(e) => setEmail(e.target.value)}  value={email} type="email" />
+      </FormControl>
+      <FormControl id="password">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Password'} onChange={(e) => setPassword(e.target.value)}  value={password} type="password" />
+      </FormControl>
+      <FormControl id="Confirm password">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Confairm Password'} onChange={(e) => setPassword2(e.target.value)}  value={password2} type="password" />
+      </FormControl>
+      <FormControl id="IBAN">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'IBAN'} onChange={(e) => setIBAN(e.target.value)} type="IBAN" />
+      </FormControl>
+      <Stack spacing={6}>
+        <Stack
+          direction={{ base: 'column', sm: 'row' }}
+          align={'start'}
+          justify={'space-between'}>
+          <Checkbox>Remember me</Checkbox>
+        </Stack>
+        <Button onClick={submitRegister} colorScheme={'purple'} variant={'solid'}>
+          Sign up
+        </Button>
+        <HStack>
+          <Text>Already have account ?</Text>
+          <Link to='/login'>Login</Link>
+        </HStack>
+      </Stack>
+    </Stack>
+  </Flex>
+</Stack>
 
-     </Flex>
+</>
     );
   };

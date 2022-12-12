@@ -10,11 +10,17 @@ import {
     Button,
     useToast,
     HStack,
+    Checkbox,
+    FormControl,
+    FormLabel,
+    Stack,
+    Image
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { Link, useNavigate } from 'react-router-dom';
   import LoginForm from '../components/Forms/LoginForm';
 import Navbar from '../components/navbar/Navbar';
+// import '../App.css'
   
   export const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -60,21 +66,59 @@ import Navbar from '../components/navbar/Navbar';
   
     return (
 
-      <><Navbar links={[{ link: "/", alias: "About" }, { link: "/", alias: "Experience" }, { link: "/", alias: "CREATE ACCOUNT" }, { link: "/", alias: "SIGN IN" },]} logo={'https://media.discordapp.net/attachments/1036228185756541008/1051215907659190422/logo_transparent.png?width=936&height=936'} />
-      <Flex justifyContent='center' alignItems='center' height='100vh'>
-        <VStack spacing='2rem' width='20rem'>
-          <Heading>Login </Heading>
-          <LoginForm
-            username={username}
-            setUsername={setUsername}
-            setPassword={setPassword}
-            password={password}
-            submitLogin={submitLogin} />
-          <HStack>
-            <Text>You don't have account ? </Text>
-            <Link to='/register'>Register</Link>
-          </HStack>
-        </VStack>
-      </Flex></>
+      <>
+            <Stack 
+            bg='#2b2b2b'
+            margin={'0'} h={'100vh'} direction={{ base: 'column', md: 'row' }}>
+        <Flex flex={1}>
+          <Image
+            alt={'Login Image'}
+            objectFit={'cover'}
+            h={'99%'}
+            marginTop={'1.5'}
+            src={
+              'https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png'
+            }
+          />
+        </Flex>
+        <Flex  p={8} flex={1} align={'center'} justify={'center'}>
+          <Stack border={'1px solid white'}  padding={'14'} color={"white"} spacing={4} w={'200'} maxW={'md'}>
+            <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
+            ></Image>
+            <Heading fontSize={'2xl'}>Log in to your account</Heading>
+            <Text>Enter Your Username And Password</Text>
+            <FormControl id="Userame">
+              {/* <FormLabel>UserName</FormLabel> */}
+              <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Username'}  onChange={(e) => setUsername (e.target.value)} type="Username" />
+            </FormControl>
+            <FormControl id="password">
+              {/* <FormLabel>Password</FormLabel> */}
+              <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Password'} onChange={(e) => setPassword (e.target.value)} type="password" />
+            </FormControl>
+            <Stack spacing={6}>
+              <Stack
+                direction={{ base: 'column', sm: 'row' }}
+                align={'start'}
+                justify={'space-between'}>
+                <Checkbox>Remember me</Checkbox>
+                <Link color={'blue.500'} to={''}>Forgot password?</Link>
+              </Stack>
+              <Button onClick={submitLogin} colorScheme={'purple'} variant={'solid'}>
+                Log in
+              </Button>
+              <HStack>
+          <Text>You don't have account ? </Text>
+          <Link to='/register'>Register</Link>
+        </HStack>
+            </Stack>
+          </Stack>
+        </Flex>
+      </Stack>
+    
+      </>
     );
   };
+
+  

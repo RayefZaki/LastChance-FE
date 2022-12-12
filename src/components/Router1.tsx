@@ -1,29 +1,42 @@
 import React from 'react'
 import {Routes,Route}from 'react-router-dom';
-import { LoginPage } from '../Pages/LoginPage';
 import ProtectedRoute from './ProtectedRoute';
 import { RegisterPage } from '../Pages/RegisterPage';
 import ArticleList from '../Pages/TicketD';
+import {LoginPage} from '../Pages/LoginPage';
+import { Box } from '@chakra-ui/react';
+import Footer from '../components/Footer';
+import WelcomePage from '../Pages/WelcomePage';
+
+
 
 
 function Router1() {
   return (
-<>
+    
 
-<ArticleList></ArticleList>
-<Routes>
-<Route path="/Login" element={<LoginPage/>}/>
-<Route path="/Register" element={<RegisterPage/>}/>
+    <><ArticleList></ArticleList>
+    
+    
+    
+      <Routes>
 
-<Route element={<ProtectedRoute />}>
-{/* <Route path='/' element={<BlogsPage/>} /> */}
-</Route>
+        {/* <Route path="/" element={<WelcomePage />} /> */}
+        <Route path="/Login" element={<LoginPage />} />
+        <Route path="/Register" element={<RegisterPage />} />
 
-</Routes>
+        <Route element={<ProtectedRoute />}>
+          {/* <Route path='/' element={<BlogsPage/>} /> */}
+        </Route>
+
+      </Routes>
+      <Footer />
 
 
 
-</>
+    </>
+
+
   )
 }
 
