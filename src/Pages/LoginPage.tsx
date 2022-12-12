@@ -20,6 +20,7 @@ import {
   import { Link, useNavigate } from 'react-router-dom';
   import LoginForm from '../components/Forms/LoginForm';
 import Navbar from '../components/navbar/Navbar';
+// import '../App.css'
   
   export const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -66,7 +67,9 @@ import Navbar from '../components/navbar/Navbar';
     return (
 
       <>
-            <Stack margin={'0'} h={'100vh'} direction={{ base: 'column', md: 'row' }}>
+            <Stack 
+            bg='#2b2b2b'
+            margin={'0'} h={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex flex={1}>
           <Image
             alt={'Login Image'}
@@ -78,8 +81,8 @@ import Navbar from '../components/navbar/Navbar';
             }
           />
         </Flex>
-        <Flex p={8} flex={1} align={'center'} justify={'center'}>
-          <Stack color={"white"} spacing={4} w={'200'} maxW={'md'}>
+        <Flex  p={8} flex={1} align={'center'} justify={'center'}>
+          <Stack border={'1px solid white'}  padding={'14'} color={"white"} spacing={4} w={'200'} maxW={'md'}>
             <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
             ></Image>
             <Heading fontSize={'2xl'}>Log in to your account</Heading>
@@ -105,6 +108,10 @@ import Navbar from '../components/navbar/Navbar';
               <Button onClick={submitLogin} colorScheme={'purple'} variant={'solid'}>
                 Log in
               </Button>
+              <HStack>
+          <Text>You don't have account ? </Text>
+          <Link to='/register'>Register</Link>
+        </HStack>
             </Stack>
           </Stack>
         </Flex>

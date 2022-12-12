@@ -4,11 +4,13 @@ import { LogoContainer, NavLink, Wrapper, MobileNav } from './Navbar.styled';
 // import { Link } from '../../Utils/CommonTypes';
 // import { Link } from 'react-router-dom';
 import { Link } from './NavbarHome';
+
 import './navbar.css';
 
 interface Props {
     links: Link[],
     logo: string
+    
 }
 const Navbar: React.FC<Props> = ({ links, logo }) => {
 
@@ -33,13 +35,25 @@ const Navbar: React.FC<Props> = ({ links, logo }) => {
                             {
                                 links.map((link, i) => {
                                     return (
-                                        <li key={i} className="nav__list_item">
+                                        <li key={i} className="nav__list_item bott">
                                             <NavLink href={link.link}> {link.alias}</NavLink>
                                         </li>
+                                        
                                     )
+                                    
                                 })
+
+                                
+                              
                             }
+                            {/* <li>  <div className='bott'>
+                                <button className='bott'>Log in</button>
+                            </div></li> */}
+
                         </ul>
+                        {/* <div className='bott'>
+                                <button className='bott'>Log in</button>
+                            </div> */}
                     </div>
                     <button className={menuOpened ? "hamburger is__active" : "hamburger"} onClick={handleOpenMenu}>
                         <span></span>
