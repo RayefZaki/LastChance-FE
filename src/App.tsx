@@ -11,6 +11,8 @@ import {
 import Router1 from "./components/Router1"
 import {Routes,Route,BrowserRouter}from 'react-router-dom';
 import FIRST from "./Pages/FIRST";
+import { TicketPage } from "./Pages/TicketPage";
+import Testimag from "./Pages/Testimag";
 
 
 
@@ -19,7 +21,7 @@ export const App = () => (
 
 {/* <FIRST></FIRST> */}
   <ChakraProvider theme={theme}>
-
+<TicketPage></TicketPage>
 <Router1/>
   </ChakraProvider>
   </BrowserRouter>
