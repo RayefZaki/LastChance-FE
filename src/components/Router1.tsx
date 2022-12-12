@@ -3,12 +3,22 @@ import {Routes,Route}from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
 import { RegisterPage } from '../Pages/RegisterPage';
 import {LoginPage} from '../Pages/LoginPage';
+import { Box } from '@chakra-ui/react';
+import Footer from '../components/Footer';
+import WelcomePage from '../Pages/WelcomePage';
+
+
 
 
 function Router1() {
   return (
-<>
+    
+<Box
+// bg={"#2b2b2b"}
+>
 <Routes>
+
+<Route path="/" element={<WelcomePage/>}/>
 <Route path="/Login" element={<LoginPage/>}/>
 <Route path="/Register" element={<RegisterPage/>}/>
 
@@ -17,10 +27,13 @@ function Router1() {
 </Route>
 
 </Routes>
+<Footer/>
 
 
 
-</>
+</Box>
+
+
   )
 }
 
