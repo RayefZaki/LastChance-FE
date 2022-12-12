@@ -28,7 +28,7 @@ import {
   
     const toast = useToast();
   
-    const Register = async () => {
+    const submitRegister = async () => {
       try {
         if (password !== password2) {
           toast({
@@ -85,23 +85,23 @@ import {
       <Heading fontSize={'2xl'}>Create Account</Heading>
       <FormControl id="username">
         <FormLabel>Username</FormLabel>
-        <Input type="username" />
+        <Input onChange={(e) => setUsername(e.target.value)}  value={username} type="username" />
       </FormControl>
       <FormControl id="email">
         <FormLabel>Email address</FormLabel>
-        <Input type="email" />
+        <Input  onChange={(e) => setEmail(e.target.value)}  value={email} type="email" />
       </FormControl>
       <FormControl id="password">
         <FormLabel>Password</FormLabel>
-        <Input type="password" />
+        <Input onChange={(e) => setPassword(e.target.value)}  value={password} type="password" />
       </FormControl>
       <FormControl id="Confirm password">
         <FormLabel>Confirm Password</FormLabel>
-        <Input type="password" />
+        <Input onChange={(e) => setPassword2(e.target.value)}  value={password2} type="password" />
       </FormControl>
       <FormControl id="IBAN">
         <FormLabel>IBAN</FormLabel>
-        <Input type="iban" />
+        <Input onChange={(e) => setIBAN(e.target.value)} type="IBAN" />
       </FormControl>
       <Stack spacing={6}>
         <Stack
@@ -111,7 +111,7 @@ import {
           <Checkbox>Remember me</Checkbox>
           <Link color={'blue.500'} to={''}>Forgot password?</Link>
         </Stack>
-        <Button colorScheme={'purple'} variant={'solid'}>
+        <Button onClick={submitRegister} colorScheme={'purple'} variant={'solid'}>
           Sign up
         </Button>
       </Stack>
