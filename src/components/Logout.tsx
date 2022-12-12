@@ -1,17 +1,25 @@
-import { Button } from '@chakra-ui/react';
+import { Box, Button } from '@chakra-ui/react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Logout = () => {
+const Logout:any = () => {
   const navigate = useNavigate();
-  const logout = () => {
+
+  const logout1 = () => {
+
     localStorage.removeItem('token');
     navigate('/login');
   };
   return (
-    <Button onClick={logout} backgroundColor='red.400'>
+    <Button onClick={logout1} backgroundColor='red.400'>
       Logout
     </Button>
+   
+    
+  
+  
+    
+    
   );
 };
 

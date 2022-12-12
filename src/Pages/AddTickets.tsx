@@ -1,10 +1,10 @@
 import React, { useState ,useEffect} from 'react'
 import { Stack,Box, Image,Text, HStack ,Heading,VStack} from '@chakra-ui/react'
-import axios from 'axios'
 export default function AddTickets() {
-  
+
     
 const [user, setUser] = useState([]);
+
 
   const fetchData = async() => {
     try{
@@ -23,9 +23,6 @@ const [user, setUser] = useState([]);
   useEffect(() => {
     fetchData();
   },[])
-  
-
-
 
   return (
      <div>
