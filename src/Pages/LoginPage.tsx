@@ -70,13 +70,13 @@ import Navbar from '../components/navbar/Navbar';
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
           <Stack spacing={4} w={'full'} maxW={'md'}>
             <Heading fontSize={'2xl'}>Log in to your account</Heading>
-            <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+            <FormControl id="Userame">
+              <FormLabel>UserName</FormLabel>
+              <Input onChange={(e) => setUsername (e.target.value)} type="Username" />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" />
+              <Input onChange={(e) => setPassword (e.target.value)} type="password" />
             </FormControl>
             <Stack spacing={6}>
               <Stack
@@ -86,7 +86,7 @@ import Navbar from '../components/navbar/Navbar';
                 <Checkbox>Remember me</Checkbox>
                 <Link color={'blue.500'} to={''}>Forgot password?</Link>
               </Stack>
-              <Button colorScheme={'purple'} variant={'solid'}>
+              <Button onClick={submitLogin} colorScheme={'purple'} variant={'solid'}>
                 Log in
               </Button>
             </Stack>
