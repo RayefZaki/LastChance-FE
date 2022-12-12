@@ -11,16 +11,18 @@ import {
 import Router1 from "./components/Router1"
 import {Routes,Route,BrowserRouter}from 'react-router-dom';
 import FIRST from "./Pages/FIRST";
+import PageTicket from "./Pages/PageTicket";
 
 
 
 export const App = () => (
   <BrowserRouter>
 
-{/* <FIRST></FIRST> */}
-  <ChakraProvider theme={theme}>
 
-<Router1/>
+  <ChakraProvider theme={theme}>
+  {/* <FIRST></FIRST> */}
+  <PageTicket/>
+{/* <Router1/> */}
   </ChakraProvider>
   </BrowserRouter>
 )
