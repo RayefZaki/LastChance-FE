@@ -1,6 +1,7 @@
 import * as React from "react"
 // import './App.css'
 import {
+  Box,
   Button,
   ChakraProvider,
   Flex,
@@ -21,9 +22,9 @@ export const App = () => (
 
 
   <ChakraProvider theme={theme}>
-  {/* <FIRST></FIRST> */}
-  {/* <PageTicket/> */}
+ <Box margin={'0'} bg={'#2b2b2b'}>
 <Router1/>
+</Box>
   </ChakraProvider>
   </BrowserRouter>
 )
