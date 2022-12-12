@@ -16,6 +16,7 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { Link, useNavigate } from 'react-router-dom';
+import Navbar from '../components/navbar/Navbar';
   
   export const RegisterPage = () => {
     const [username, setUsername] = useState('');
@@ -79,7 +80,9 @@ import {
   
     return (
       <>
-      <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+              {/* <Navbar links={[  { link: "/register", alias: "REGISTER" }, { link: "/login", alias: "LOG IN" },]} logo={'https://media.discordapp.net/attachments/1036228185756541008/1051215907659190422/logo_transparent.png?width=936&height=936'} /> */}
+
+      <Stack bg='#2b2b2b'minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
   <Flex flex={1}>
     <Image
       alt={'Login Image'}

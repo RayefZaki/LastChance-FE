@@ -16,6 +16,7 @@ import {
     Stack,
     Image
   } from '@chakra-ui/react';
+import { log } from 'console';
   import { useState } from 'react';
   import { Link, useNavigate } from 'react-router-dom';
   import LoginForm from '../components/Forms/LoginForm';
@@ -27,6 +28,9 @@ import Navbar from '../components/navbar/Navbar';
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const toast = useToast();
+  
+    
+  
     const submitLogin = async () => {
       try {
         const request = await fetch('/api/v1/auth/login', {
@@ -37,7 +41,7 @@ import Navbar from '../components/navbar/Navbar';
           body: JSON.stringify({ username, password }),
         });
         const data = await request.json();
-        if (request.status !== 200) {
+        if (request.status !== 201) {
           toast({
             title: data.message,
             status: 'error',
@@ -66,7 +70,10 @@ import Navbar from '../components/navbar/Navbar';
   
     return (
 
+      
       <>
+              {/* <Navbar links={[  { link: "/register", alias: "REGISTER" }, { link: "/login", alias: "LOG IN" },]} logo={'https://media.discordapp.net/attachments/1036228185756541008/1051215907659190422/logo_transparent.png?width=936&height=936'} /> */}
+              
             <Stack 
             bg='#2b2b2b'
             margin={'0'} h={'100vh'} direction={{ base: 'column', md: 'row' }}>

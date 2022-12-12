@@ -3,23 +3,27 @@ import React, { useState } from 'react'
 import { LogoContainer, NavLink, Wrapper, MobileNav } from './Navbar.styled';
 // import { Link } from '../../Utils/CommonTypes';
 // import { Link } from 'react-router-dom';
-import { Link } from './NavbarHome';
+import { Links } from './NavbarHome';
 
 import './navbar.css';
+import { Button } from '@chakra-ui/react';
+import { useNavigate,Link } from 'react-router-dom';
+
 
 interface Props {
-    links: Link[],
+    links: Links[],
     logo: string
     
 }
 const Navbar: React.FC<Props> = ({ links, logo }) => {
 
-
+    const navigate = useNavigate();
     
     // const NavLinks: Link[] = [ { link: "/", alias: "About" }, { link: "/", alias: "Experience" }, { link: "/", alias: "Work" }, { link: "/", alias: "Contact" }, ];
     const [menuOpened, setMenuOpened] = useState<boolean>(false);
 
     const handleOpenMenu = (): void => {
+        
         setMenuOpened(!menuOpened);
     }
     return (
@@ -35,9 +39,36 @@ const Navbar: React.FC<Props> = ({ links, logo }) => {
                             {
                                 links.map((link, i) => {
                                     return (
+
                                         <li key={i} className="nav__list_item bott">
-                                            <NavLink href={link.link}> {link.alias}</NavLink>
+                                            
+                                            <Link to ={link.link}>
+                                                
+                                             <Button
+                                             
+                                
+                                             width={'150px'} 
+                                             borderRadius={'50px'}
+                                             margin={'20px auto 15px 10px'}
+                                             bg={'#A259FF'}
+                                             color={'white'}
+                                             _hover={{
+                                                background: "white",
+                                                color: "#A259FF",
+                                              }}
+                                               
+                                             
+                                             
+                                            size='md'>
+                                                   {link.alias}
+                                                   {/* {!localStorage.getItem('token') ? "Sign In " :"logout"} */}
+                                              </Button>
+
+                                              </Link>
+                                            {/* <NavLink href={link.link}> {link.alias}</NavLink> */}
+
                                         </li>
+                                      
                                         
                                     )
                                     
