@@ -36,7 +36,7 @@ import Navbar from '../components/navbar/Navbar';
           body: JSON.stringify({ username, password }),
         });
         const data = await request.json();
-        if (request.status !== 200) {
+        if (request.status !== 201) {
           toast({
             title: data.message,
             status: 'error',
