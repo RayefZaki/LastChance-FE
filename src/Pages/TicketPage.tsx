@@ -14,30 +14,53 @@ import {
     FormControl,
     FormLabel,
     Stack,
-    Image
+    Image,
+    Select,
+    NumberDecrementStepper,
+    NumberIncrementStepper,
+    NumberInput,
+    NumberInputField,
+    NumberInputStepper
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { Link, useNavigate } from 'react-router-dom';
   import LoginForm from '../components/Forms/LoginForm';
 import Navbar from '../components/navbar/Navbar';
-// import '../App.css'
-  
-  export const LoginPage = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+import Testimag from './Testimag';
+
+
+function ConvertFile(files: FileList|null) {
+    const [FileList64, setFileBase64] = useState('');
+    if (files) {
+        const fileRef = files[0] || ""
+        const fileType: string= fileRef.type || ""
+        console.log("This file upload is of type:",fileType)
+        const reader = new FileReader()
+        reader.readAsBinaryString(fileRef)
+        reader.onload=(ev: any) => {
+            // convert it to base64
+            setFileBase64(`data:${fileType};base64,${btoa(ev.target.result)}`)
+        }
+    }
+}
+export const TicketPage = () => {
+    const [type,setType]= useState('');
+    const [numberOfTicket,setNumberOfTicket]= useState('');
+    const [ticketPrice,setTicketPrice]= useState('');
+    const [image,setImage]= useState('');
     const navigate = useNavigate();
     const toast = useToast();
     const submitLogin = async () => {
       try {
-        const request = await fetch('/api/v1/auth/login', {
+        const request = await fetch('/api/v1/auth/ticket', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ username, password }),
+          body: JSON.stringify({ type,numberOfTicket,ticketPrice,image }),
         });
         const data = await request.json();
-        if (request.status !== 201) {
+        if (request.status !== 200) {
           toast({
             title: data.message,
             status: 'error',
@@ -85,33 +108,39 @@ import Navbar from '../components/navbar/Navbar';
           <Stack border={'1px solid white'} borderRadius={'2xl'} padding={'14'} color={"white"} spacing={4} w={'200'} maxW={'md'}>
             <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
             ></Image>
-            <Heading fontSize={'2xl'}>Log in to your account</Heading>
-            <Text>Enter Your Username And Password</Text>
-            <FormControl id="Userame">
-              {/* <FormLabel>UserName</FormLabel> */}
-              <Input borderRadius={'2xl'} bg='white' 
-              color={'black'} placeholder={'Username'}  onChange={(e) => setUsername (e.target.value)} type="Username" />
+            <Heading fontSize={'2xl'}>Insert Your Ticket</Heading>
+            <FormControl id="Catogry">
+            <Select bg='white' color={'black'} placeholder='Select Option'>
+             <option value='option1'>Platinum</option>
+             <option value='option2'>Gold</option>
+             <option value='option3'>Silver</option>
+             <option value='option3'>Regular</option>
+            </Select>
             </FormControl>
-            <FormControl id="password">
-              {/* <FormLabel>Password</FormLabel> */}
-              <Input borderRadius={'2xl'} bg='white' 
-              color={'black'} placeholder={'Password'} onChange={(e) => setPassword (e.target.value)} type="password" />
+
+            <FormControl id="Number Of Ticket">
+            <NumberInput borderRadius={'2xl'} bg='white' color={'black'} defaultValue={1} min={1} max={5}>
+             <NumberInputField />
+             <NumberInputStepper>
+             <NumberIncrementStepper />
+             <NumberDecrementStepper />
+             </NumberInputStepper>
+            </NumberInput>
             </FormControl>
+
+            <FormControl id="price">
+             <Input borderRadius={'base'} bg='white' color={'black'} placeholder={'Enter The Real Ticket Price'} type="price" />
+            </FormControl>
+    
+            <FormControl>
+            <Testimag></Testimag>
+            </FormControl>
+
             <Stack spacing={6}>
-              <Stack
-                direction={{ base: 'column', sm: 'row' }}
-                align={'start'}
-                justify={'space-between'}>
-                <Checkbox>Remember me</Checkbox>
-                <Link color={'blue.500'} to={''}>Forgot password?</Link>
-              </Stack>
               <Button onClick={submitLogin} colorScheme={'purple'} variant={'solid'}>
-                Log in
+                Send Ticket
               </Button>
-              <HStack>
-          <Text>You don't have account ? </Text>
-          <Link to='/register'>Register</Link>
-        </HStack>
+
             </Stack>
           </Stack>
         </Flex>
@@ -120,5 +149,3 @@ import Navbar from '../components/navbar/Navbar';
       </>
     );
   };
-
-  

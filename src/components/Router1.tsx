@@ -6,6 +6,7 @@ import {LoginPage} from '../Pages/LoginPage';
 import { Box } from '@chakra-ui/react';
 import Footer from '../components/Footer';
 import WelcomePage from '../Pages/WelcomePage';
+import PageTicket from '../Pages/PageTicket';
 
 
 
@@ -21,7 +22,7 @@ function Router1() {
 <Route path="/" element={<WelcomePage/>}/>
 <Route path="/Login" element={<LoginPage/>}/>
 <Route path="/Register" element={<RegisterPage/>}/>
-
+<Route path='/PageTicket' element={<PageTicket/>}/>
 <Route element={<ProtectedRoute />}>
 {/* <Route path='/' element={<BlogsPage/>} /> */}
 </Route>
