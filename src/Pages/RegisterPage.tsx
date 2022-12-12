@@ -79,44 +79,7 @@ import {
   
     return (
       <>
-      <Stack bg='#2b2b2b' minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-  <Flex p={8} flex={1} align={'center'} justify={'center'}>
-    <Stack spacing={4} w={'full'} maxW={'md'}>
-      <Heading fontSize={'2xl'}>Create Account</Heading>
-      <FormControl id="username">
-        <FormLabel>Username</FormLabel>
-        <Input onChange={(e) => setUsername(e.target.value)}  value={username} type="username" />
-      </FormControl>
-      <FormControl id="email">
-        <FormLabel>Email address</FormLabel>
-        <Input  onChange={(e) => setEmail(e.target.value)}  value={email} type="email" />
-      </FormControl>
-      <FormControl id="password">
-        <FormLabel>Password</FormLabel>
-        <Input onChange={(e) => setPassword(e.target.value)}  value={password} type="password" />
-      </FormControl>
-      <FormControl id="Confirm password">
-        <FormLabel>Confirm Password</FormLabel>
-        <Input onChange={(e) => setPassword2(e.target.value)}  value={password2} type="password" />
-      </FormControl>
-      <FormControl id="IBAN">
-        <FormLabel>IBAN</FormLabel>
-        <Input onChange={(e) => setIBAN(e.target.value)} type="IBAN" />
-      </FormControl>
-      <Stack spacing={6}>
-        <Stack
-          direction={{ base: 'column', sm: 'row' }}
-          align={'start'}
-          justify={'space-between'}>
-          <Checkbox>Remember me</Checkbox>
-          <Link color={'blue.500'} to={''}>Forgot password?</Link>
-        </Stack>
-        <Button onClick={submitRegister} colorScheme={'purple'} variant={'solid'}>
-          Sign up
-        </Button>
-      </Stack>
-    </Stack>
-  </Flex>
+      <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
   <Flex flex={1}>
     <Image
       alt={'Login Image'}
@@ -125,6 +88,49 @@ import {
         'https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png'
       }
     />
+  </Flex>
+  <Flex p={8} flex={1} align={'center'} justify={'center'}>
+    <Stack border={'1px solid white'}  padding={'14'}  color={"white"} spacing={4} w={'200'} maxW={'md'}>
+    <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
+            ></Image>
+      <Heading fontSize={'2xl'}>Create Account</Heading>
+      <Text>Enter Your Information </Text>
+      <FormControl id="username">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Username'} onChange={(e) => setUsername(e.target.value)}  value={username} type="username" />
+      </FormControl>
+      <FormControl id="email">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Email'} onChange={(e) => setEmail(e.target.value)}  value={email} type="email" />
+      </FormControl>
+      <FormControl id="password">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Password'} onChange={(e) => setPassword(e.target.value)}  value={password} type="password" />
+      </FormControl>
+      <FormControl id="Confirm password">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Confairm Password'} onChange={(e) => setPassword2(e.target.value)}  value={password2} type="password" />
+      </FormControl>
+      <FormControl id="IBAN">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'IBAN'} onChange={(e) => setIBAN(e.target.value)} type="IBAN" />
+      </FormControl>
+      <Stack spacing={6}>
+        <Stack
+          direction={{ base: 'column', sm: 'row' }}
+          align={'start'}
+          justify={'space-between'}>
+          <Checkbox>Remember me</Checkbox>
+        </Stack>
+        <Button onClick={submitRegister} colorScheme={'purple'} variant={'solid'}>
+          Sign up
+        </Button>
+        <HStack>
+          <Text>Already have account ?</Text>
+          <Link to='/login'>Login</Link>
+        </HStack>
+      </Stack>
+    </Stack>
   </Flex>
 </Stack>
 
