@@ -17,10 +17,10 @@ import FIRST from "./Pages/FIRST";
 export const App = () => (
   <BrowserRouter>
 
-<FIRST></FIRST>
+{/* <FIRST></FIRST> */}
   <ChakraProvider theme={theme}>
 
-{/* <Router1/> */}
+<Router1/>
   </ChakraProvider>
   </BrowserRouter>
 )
