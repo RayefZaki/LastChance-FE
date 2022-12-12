@@ -80,9 +80,13 @@ import Navbar from '../components/navbar/Navbar';
   
     return (
       <>
+
               {/* <Navbar links={[  { link: "/register", alias: "REGISTER" }, { link: "/login", alias: "LOG IN" },]} logo={'https://media.discordapp.net/attachments/1036228185756541008/1051215907659190422/logo_transparent.png?width=936&height=936'} /> */}
 
-      <Stack bg='#2b2b2b'minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+    
+
+      <Stack bg='#2b2b2b' minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+
   <Flex flex={1}>
     <Image
       alt={'Login Image'}
@@ -93,7 +97,7 @@ import Navbar from '../components/navbar/Navbar';
     />
   </Flex>
   <Flex p={8} flex={1} align={'center'} justify={'center'}>
-    <Stack border={'1px solid white'}  padding={'14'}  color={"white"} spacing={4} w={'200'} maxW={'md'}>
+    <Stack border={'1px solid white'} borderRadius={'2xl'} padding={'14'}  color={"white"} spacing={4} w={'200'} maxW={'md'}>
     <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
             ></Image>
       <Heading fontSize={'2xl'}>Create Account</Heading>
@@ -113,10 +117,6 @@ import Navbar from '../components/navbar/Navbar';
       <FormControl id="Confirm password">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'Confairm Password'} onChange={(e) => setPassword2(e.target.value)}  value={password2} type="password" />
-      </FormControl>
-      <FormControl id="IBAN">
-        <Input borderRadius={'2xl'} bg='white' 
-              color={'black'} placeholder={'IBAN'} onChange={(e) => setIBAN(e.target.value)} type="IBAN" />
       </FormControl>
       <Stack spacing={6}>
         <Stack
