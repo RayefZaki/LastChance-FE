@@ -90,7 +90,7 @@ import {
     />
   </Flex>
   <Flex p={8} flex={1} align={'center'} justify={'center'}>
-    <Stack color={"white"} spacing={4} w={'200'} maxW={'md'}>
+    <Stack border={'1px solid white'}  padding={'14'}  color={"white"} spacing={4} w={'200'} maxW={'md'}>
     <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
             ></Image>
       <Heading fontSize={'2xl'}>Create Account</Heading>
@@ -121,11 +121,14 @@ import {
           align={'start'}
           justify={'space-between'}>
           <Checkbox>Remember me</Checkbox>
-          <Link color={'blue.500'} to={''}>Forgot password?</Link>
         </Stack>
         <Button onClick={submitRegister} colorScheme={'purple'} variant={'solid'}>
           Sign up
         </Button>
+        <HStack>
+          <Text>Already have account ?</Text>
+          <Link to='/login'>Login</Link>
+        </HStack>
       </Stack>
     </Stack>
   </Flex>
