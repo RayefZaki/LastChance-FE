@@ -79,7 +79,7 @@ import {
   
     return (
       <>
-      <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+      <Stack bg='#2b2b2b' minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
   <Flex p={8} flex={1} align={'center'} justify={'center'}>
     <Stack spacing={4} w={'full'} maxW={'md'}>
       <Heading fontSize={'2xl'}>Create Account</Heading>

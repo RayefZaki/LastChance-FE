@@ -89,8 +89,9 @@ import {
           <Stack direction={'row'} spacing={6}>
             <Link href={'#'}>Home</Link>
             <Link href={'#'}>About</Link>
-            <Link href={'#'}>Blog</Link>
             <Link href={'#'}>Contact</Link>
+            <Link href={'#'}>sell your ticket</Link>
+
           </Stack>
         </Container>
   
@@ -110,7 +111,7 @@ import {
             spacing={4}
             justify={{ base: 'center', md: 'space-between' }}
             align={{ base: 'center', md: 'center' }}>
-            <Text>© 2022 Chakra Templates. All rights reserved</Text>
+            <Text>© 2022 M.A.R.N . All rights reserved</Text>
             <Stack 
             direction={'row'} spacing={6}>
               <SocialButton 

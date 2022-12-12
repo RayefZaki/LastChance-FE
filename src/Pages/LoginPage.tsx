@@ -20,6 +20,7 @@ import {
   import { Link, useNavigate } from 'react-router-dom';
   import LoginForm from '../components/Forms/LoginForm';
 import Navbar from '../components/navbar/Navbar';
+// import '../App.css'
   
   export const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -66,7 +67,9 @@ import Navbar from '../components/navbar/Navbar';
     return (
 
       <>
-            <Stack margin={'0'} h={'100vh'} direction={{ base: 'column', md: 'row' }}>
+            <Stack 
+            bg='#2b2b2b'
+            margin={'0'} h={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex flex={1}>
           <Image
             alt={'Login Image'}
