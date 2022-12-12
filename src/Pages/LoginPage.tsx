@@ -66,17 +66,33 @@ import Navbar from '../components/navbar/Navbar';
     return (
 
       <>
-            <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+            <Stack margin={'0'} h={'100vh'} direction={{ base: 'column', md: 'row' }}>
+        <Flex flex={1}>
+          <Image
+            alt={'Login Image'}
+            objectFit={'cover'}
+            h={'99%'}
+            marginTop={'1.5'}
+            src={
+              'https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png'
+            }
+          />
+        </Flex>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
-          <Stack spacing={4} w={'100'} maxW={'md'}>
+          <Stack color={"white"} spacing={4} w={'200'} maxW={'md'}>
+            <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
+            ></Image>
             <Heading fontSize={'2xl'}>Log in to your account</Heading>
+            <Text>Enter Your Username And Password</Text>
             <FormControl id="Userame">
-              <FormLabel>UserName</FormLabel>
-              <Input onChange={(e) => setUsername (e.target.value)} type="Username" />
+              {/* <FormLabel>UserName</FormLabel> */}
+              <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Username'}  onChange={(e) => setUsername (e.target.value)} type="Username" />
             </FormControl>
             <FormControl id="password">
-              <FormLabel>Password</FormLabel>
-              <Input onChange={(e) => setPassword (e.target.value)} type="password" />
+              {/* <FormLabel>Password</FormLabel> */}
+              <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Password'} onChange={(e) => setPassword (e.target.value)} type="password" />
             </FormControl>
             <Stack spacing={6}>
               <Stack
@@ -91,15 +107,6 @@ import Navbar from '../components/navbar/Navbar';
               </Button>
             </Stack>
           </Stack>
-        </Flex>
-        <Flex flex={1}>
-          <Image
-            alt={'Login Image'}
-            objectFit={'cover'}
-            src={
-              'https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png'
-            }
-          />
         </Flex>
       </Stack>
     
