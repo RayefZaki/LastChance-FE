@@ -68,7 +68,7 @@ import Navbar from '../components/navbar/Navbar';
       <>
             <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
-          <Stack spacing={4} w={'full'} maxW={'md'}>
+          <Stack spacing={4} w={'100'} maxW={'md'}>
             <Heading fontSize={'2xl'}>Log in to your account</Heading>
             <FormControl id="Userame">
               <FormLabel>UserName</FormLabel>
