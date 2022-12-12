@@ -1,5 +1,6 @@
 import React, { useState ,useEffect} from 'react'
-import { Stack,Box, Image,Text, HStack ,Heading,VStack} from '@chakra-ui/react'
+import { Stack,Box, Image,Text, HStack ,Heading,VStack, Button} from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 export default function AddTickets() {
 
     
@@ -28,9 +29,9 @@ const [user, setUser] = useState([]);
      <div>
 
 {user.map((blog: any) => (
-        <VStack>
+        <VStack >
           
-          <Box bg={'#393737'} margin={'0 auto'} width={'98%'} padding={'2'} display={'flex'} justifyContent={'space-between'}
+          <Box bg={'#393737'} shadow={'dark-lg'} margin={'0 auto 10px auto'} width={'80%'} padding={'2'} display={'flex'} justifyContent={'space-between'}
                borderRadius={'7'} color={'white'} marginTop={'1.5'}>
                 <Box>
                   <HStack bg={'#393737'}>
@@ -41,6 +42,7 @@ const [user, setUser] = useState([]);
               <Text bg={'#393737'}>{blog.price}$</Text>
               <Text bg={'#393737'}>{blog.seatsLocation}</Text>
               <Text bg={'#393737'}>{blog.numberOfTicket}</Text>
+              <Button shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button>
               </Box>
               </Box>
           </VStack> 
