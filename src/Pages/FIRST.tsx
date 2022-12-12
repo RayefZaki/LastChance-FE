@@ -1,17 +1,14 @@
 import { Stack, Button, Flex } from '@chakra-ui/react'
 import React from 'react'
-import Navbar from '../components/navbar/Navbar'
 import Minpage from '../MAIN-PAGE/Minpage'
 
 function FIRST() {
   return (<div>
-<Navbar links={[{ link: "/", alias: "About" }, { link: "/", alias: "Experience" }, { link: "/", alias: "CREATE ACCOUNT" }, { link: "/", alias: "SIGN IN" },]} logo={'https://media.discordapp.net/attachments/1036228185756541008/1051215907659190422/logo_transparent.png?width=936&height=936'} />
 
 <div className="Tesxt"><h1>TOP EVENTS</h1> </div>
 <Stack direction={'row'}>
 <Flex h="10vh" justifyContent="center" alignItems="center">
       <Button
-        /* flex={1} */
         px={4}
         fontSize={'sm'}
         rounded={'full'}

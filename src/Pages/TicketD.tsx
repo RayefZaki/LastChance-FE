@@ -71,7 +71,7 @@ const ArticleList = () => {
         min: 0,
       })
   return (
-    <Container bg="#2b2b2b" maxW={'7xl'} p="12">
+    <Container  maxW={'7xl'} p="12">
       <Heading as="h1">Ticket informaiton</Heading>
       <Box
                         bgGradient={'linear(to-r, blackAlpha.700, transparent)'}
@@ -137,7 +137,8 @@ Ticket details            </Link>
             marginBottom="3">
 
 
-        
+          price <Input type="number"></Input>
+          catogry<Input type="number"></Input>
 
 
           </Text>
