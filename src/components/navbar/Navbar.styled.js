@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-// import ColorPalette from '../../FontsAndColors/ColorPalette'
 
 
 export const Wrapper = styled.nav`
@@ -9,7 +8,7 @@ export const Wrapper = styled.nav`
     
    
     border-bottom: 1px solid ;
-    background-color: #000000;
+    background-color: #2B2B2B;
 
     top:0;
     left:0;

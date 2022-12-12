@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "montserrat";
+}
+body{
+    background: #333;
+}
+.middle{
+    position: absolute;
+    top: 10;
+    left: 50%;
+    transform:translate(-10%, -50%);
+}
+.CardM{
+    cursor: pointer;
+    width: 300px;
+    height: 250px;
+}
+.Front{
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+}
+.Back{ 
+    width: 20%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+
+}
+
+.Front img{
+height: 100%;
+}
+.Front{
+    transform: perspective(600px)rotateY(0deg);
+}
+
+.Back{
+   
+
+    background-color: blueviolet;
+    transform: perspective(600px)rotateY(180deg);
+}
+.CardM:hover> .Front{
+    transform: perspective(600px)rotateY(-180deg);
+
+}
+.CardM:hover> .Back{
+    transform: perspective(600px)rotateY(0deg);
+
+}
