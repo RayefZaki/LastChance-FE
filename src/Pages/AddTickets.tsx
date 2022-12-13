@@ -1,6 +1,7 @@
 import React, { useState ,useEffect} from 'react'
 import { Stack,Box, Image,Text, HStack ,Heading,VStack} from '@chakra-ui/react'
 import axios from 'axios'
+
 export default function AddTickets() {
   // const [blogs, setBlogs] = useState<string[]>([]);
   const [type,setType] = useState('');
