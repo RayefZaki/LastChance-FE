@@ -88,12 +88,10 @@ import Navbar from '../components/navbar/Navbar';
             <Heading fontSize={'2xl'}>Log in to your account</Heading>
             <Text>Enter Your Username And Password</Text>
             <FormControl id="Userame">
-              {/* <FormLabel>UserName</FormLabel> */}
               <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'Username'}  onChange={(e) => setUsername (e.target.value)} type="Username" />
             </FormControl>
             <FormControl id="password">
-              {/* <FormLabel>Password</FormLabel> */}
               <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'Password'} onChange={(e) => setPassword (e.target.value)} type="password" />
             </FormControl>

@@ -19,11 +19,13 @@ import {
 import Navbar from '../components/navbar/Navbar';
   
   export const RegisterPage = () => {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [password2, setPassword2] = useState('');
-    const [IBAN,setIBAN] = useState('')
+    const [mobileNumber,setMobileNumber] = useState('')
   
     const navigate = useNavigate();
   
@@ -46,7 +48,7 @@ import Navbar from '../components/navbar/Navbar';
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ username, password, email,IBAN}),
+          body: JSON.stringify({ firstName,lastName,username, password, email,mobileNumber}),
         });
   
         const data = await request.json();
@@ -102,6 +104,14 @@ import Navbar from '../components/navbar/Navbar';
             ></Image>
       <Heading fontSize={'2xl'}>Create Account</Heading>
       <Text>Enter Your Information </Text>
+      <FormControl id="firstname">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'First Name'} onChange={(e) => setFirstName(e.target.value)}  value={firstName} type="firstName" />
+      </FormControl>
+      <FormControl id="lastname">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Last Name'} onChange={(e) => setLastName(e.target.value)}  value={lastName} type="LastName" />
+      </FormControl>
       <FormControl id="username">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'Username'} onChange={(e) => setUsername(e.target.value)}  value={username} type="username" />
@@ -117,6 +127,10 @@ import Navbar from '../components/navbar/Navbar';
       <FormControl id="Confirm password">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'Confairm Password'} onChange={(e) => setPassword2(e.target.value)}  value={password2} type="password" />
+      </FormControl>
+      <FormControl id="mobileNumber">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Mobile Number'} onChange={(e) => setMobileNumber(e.target.value)}  value={mobileNumber} type="mobileNumber" />
       </FormControl>
       <Stack spacing={6}>
         <Stack
