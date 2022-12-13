@@ -20,6 +20,7 @@ import Thankyou from '../Pages/ThankyouPage';
 import Thankyou2 from '../Pages/ThankyouPage2';
 
 
+import GetTickets from '../Pages/GetTickets';
 
 
 
@@ -57,7 +58,7 @@ function Router1() {
 <Route path="/" element={<WelcomePage/>}/>
 <Route path="/Login" element={<LoginPage/>}/>
 <Route path="/Register" element={<RegisterPage/>}/>
-{/* <Route path='/GetTicket' element={<GetTickets/>}/> */}
+<Route path='/GetTicket' element={<GetTickets/>}/>
 <Route path='/PageTicket' element={<PageTicket/>}/>
 <Route path='/thankyou' element={<Thankyou/>}/>
 <Route path='/thanks' element={<Thankyou2/>}/>

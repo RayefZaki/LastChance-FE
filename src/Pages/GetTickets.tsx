@@ -13,7 +13,12 @@ import {
     FormControl,
     FormLabel,
     Stack,
-    Image
+    Image,
+    NumberDecrementStepper,
+    NumberIncrementStepper,
+    NumberInput,
+    NumberInputField,
+    NumberInputStepper
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { Link, useNavigate } from 'react-router-dom';
@@ -90,18 +95,22 @@ export default function GetTickets() {
     <Stack border={'1px solid white'} borderRadius={'2xl'} padding={'14'}  color={"white"} spacing={4} w={'200'} maxW={'md'}>
     <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
             ></Image>
-      <Heading fontSize={'2xl'}>Create Account</Heading>
-      <Text>Enter Your Ticket </Text>
-      <FormControl id="type">
+      <Heading fontSize={'2xl'}>Enter Your Ticket</Heading>
+      <FormControl id="Catogry">
         <Input borderRadius={'2xl'} bg='white' 
-              color={'black'} placeholder={'Type'}
+              color={'black'} placeholder={'Catogry'}
                onChange={(e) => setType(e.target.value)}  value={type} type="type" />
       </FormControl>
-      <FormControl id="numberOfTicket">
-        <Input borderRadius={'2xl'} bg='white' 
-              color={'black'} placeholder={'numberOfTicket'}
-               onChange={(e) => setNumberOfTicket(+e.target.value)}   type="numberOfTickets" />
-      </FormControl>
+      <Text>Number Of Ticket</Text>
+      <FormControl id="Number Of Ticket" >
+            <NumberInput borderRadius={'2xl'} bg='white' color={'black'} defaultValue={1} min={1} max={5}>
+             <NumberInputField />
+             <NumberInputStepper>
+             <NumberIncrementStepper />
+             <NumberDecrementStepper />
+             </NumberInputStepper>
+            </NumberInput>
+            </FormControl>
       <FormControl id="text">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'image'} 
@@ -118,19 +127,11 @@ export default function GetTickets() {
                onChange={(e) => setSeatsLocation(e.target.value)}  value={seatsLocation} type="seatsLocation" />
       </FormControl>
       <Stack spacing={6}>
-        <Stack
-          direction={{ base: 'column', sm: 'row' }}
-          align={'start'}
-          justify={'space-between'}>
-          <Checkbox>Remember me</Checkbox>
-        </Stack>
+
         <Button onClick={submitTicket} colorScheme={'purple'} variant={'solid'}>
         submit
         </Button>
-        <HStack>
-          <Text>Already have account ?</Text>
-          <Link to='/login'>Login</Link>
-        </HStack>
+       
       </Stack>
     </Stack>
   </Flex>

@@ -1,25 +1,51 @@
-import { Img } from '@chakra-ui/react'
-import React from 'react'
+import { Img , Text } from '@chakra-ui/react'
+import React, { useState,useEffect } from 'react'
 import './Mainpage.css'
+
 function Minpage() {
+  const [user, setUser] = useState([]);
+  
+
+  const fetchData = async() => {
+    try{
+     await fetch("/api/v1/ticketAdmin",{
+      headers: {
+                 Authorization: 'Bearer ' + localStorage.getItem('token'),
+              },
+     })
+          .then((response) => response.json())
+          .then((data) => setUser(data));
+    }catch(e){
+      console.log(e)
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  },[])
+
+
+
   return (
+    <>
+    {user.map((e:any)=>(
     <div className='CardM'>
-    
     <div className='Front'>
 
-        <img src='https://cdn.discordapp.com/attachments/1036228185756541008/1051529473754939435/pexels-hygor-sakai-2311713.jpg'></img>
+        <img src={e.image}></img>
     </div>
 
 
     <div className='Back'>
-    <Img src='https://cdn.discordapp.com/attachments/1036228185756541008/1051529473754939435/pexels-hygor-sakai-2311713.jpg'>
+    <Img src={e.image}>
     </Img>
-    <div className='text-on-image'>
+    <div  className='text-on-image'>
             
-          <h1> هنا طبعا يعيال بيكون الوصف  وي رب تعجبكم :) " ماجد تقول مخيسة ياويلك وشل ستيكي من الناف حقك تكفى"</h1>
-
-            
-          <p> طبعا عشان السيد رايف مادخلني رابط الباك اند بكرى  نسوي انسيرت للايفينت مع الصور وكلشي يعني اصير ادخل البيانات وينضاف كرت مباشرة</p>
+    <h1>{e.eventName}</h1>
+    <Text>{e.dataEvent}</Text>
+    <Text>{e.locationCity}</Text>
+    <Text>{e.locationEvent}</Text>
+    <Text>{e.shortDisc}</Text>
       </div>
 
 
@@ -28,7 +54,8 @@ function Minpage() {
 
     
     
-    
+   
+          
     
     
     
@@ -37,8 +64,8 @@ function Minpage() {
     </div>
 
 
-
-
+  ))}
+</>
 
   )
 }
