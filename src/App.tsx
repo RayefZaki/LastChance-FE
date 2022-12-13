@@ -14,6 +14,7 @@ import FIRST from "./Pages/FIRST";
 import ArticleList from "./Pages/TicketD";
 import PageTicket from "./Pages/PageTicket";
 import Router1 from "./components/Router1";
+import { TicketPage } from "./Pages/TicketPage";
 
 
 
@@ -24,6 +25,7 @@ export const App = () => (
   <ChakraProvider theme={theme}>
  <Box margin={'0'} bg={'#2b2b2b'}>
 <Router1/>
+<TicketPage></TicketPage>
 </Box>
   </ChakraProvider>
   </BrowserRouter>
