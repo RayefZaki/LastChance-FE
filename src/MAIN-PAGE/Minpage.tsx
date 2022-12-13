@@ -1,9 +1,10 @@
-import { Img } from '@chakra-ui/react'
+import { Img , Text } from '@chakra-ui/react'
 import React, { useState,useEffect } from 'react'
 import './Mainpage.css'
 
 function Minpage() {
-  const [user , setUser] = useState([])
+  const [user, setUser] = useState([]);
+  
 
   const fetchData = async() => {
     try{
@@ -24,11 +25,11 @@ function Minpage() {
   },[])
 
 
+
   return (
     <>
-    {user.map((e:any)=>{
+    {user.map((e:any)=>(
     <div className='CardM'>
-    
     <div className='Front'>
 
         <img src='https://cdn.discordapp.com/attachments/1036228185756541008/1051529473754939435/pexels-hygor-sakai-2311713.jpg'></img>
@@ -40,8 +41,11 @@ function Minpage() {
     </Img>
     <div  className='text-on-image'>
             
-          <h1>{e.eventName}</h1>
-          <p>{e.id}</p>
+    <h1>{e.eventName}</h1>
+    {/* <Text>{e.dataEvent}</Text> */}
+    {/* <Text>{e.locationCity}</Text> */}
+    {/* <Text>{e.locationEvent}</Text> */}
+    {/* <Text>{e.shortDisc}</Text> */}
       </div>
 
 
@@ -50,8 +54,8 @@ function Minpage() {
 
     
     
-    <h1>{e.eventName}</h1>
-          <p>{e.id}</p>
+   
+          
     
     
     
@@ -60,7 +64,7 @@ function Minpage() {
     </div>
 
 
-  })}
+  ))}
 </>
 
   )
