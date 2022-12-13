@@ -132,9 +132,12 @@ export const TicketPage = () => {
              <Input borderRadius={'base'} bg='white' color={'black'} placeholder={'Enter The Real Ticket Price'} type="price" />
             </FormControl>
     
-            <FormControl>
-            <Testimag></Testimag>
-            </FormControl>
+            {/* <FormControl> */}
+            {/* <Testimag></Testimag> */}
+            <FormControl id="password">
+        <Input borderRadius={'2xl'} bg='white' color={'black'} placeholder={'Password'} onChange={(e) => (e.target.value)}   type=" " />
+      </FormControl>
+            {/* </FormControl> */}
 
             <Stack spacing={6}>
               <Button onClick={submitLogin} colorScheme={'purple'} variant={'solid'}>
