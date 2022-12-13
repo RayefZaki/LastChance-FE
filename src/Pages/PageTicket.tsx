@@ -1,8 +1,10 @@
 import { Stack,Box, Image,Text, VStack, HStack } from '@chakra-ui/react'
 import React from 'react'
 import AddTickets from './AddTickets'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 export default function PageTicket() {
+  let {ticketid }=useParams();
+  console.log(ticketid)
   return (
     <div>
       <Stack>
@@ -22,7 +24,10 @@ export default function PageTicket() {
             <Text>Number Of Tickets</Text>
             </Box>
            </Box>
-           <AddTickets />
+           
+           {/* ffk */}
+           <AddTickets ticketid={ticketid} />
+           
         </Box>
         
       </Stack>

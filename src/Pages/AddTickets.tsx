@@ -1,15 +1,31 @@
 import React, { useState ,useEffect} from 'react'
 import { Stack,Box, Image,Text, HStack ,Heading,VStack, Button} from '@chakra-ui/react'
 import { Link } from 'react-router-dom';
-export default function AddTickets() {
+export default function AddTickets(ticketid:any) {
 
     
 const [user, setUser] = useState([]);
   
 
+  // const fetchData = async() => {
+  //   try{
+  //    await fetch("/api/v1/ticket",{
+  //     headers: {
+  //                Authorization: 'Bearer ' + localStorage.getItem('token'),
+  //             },
+  //    })
+  //         .then((response) => response.json())
+  //         .then((data) => setUser(data));
+  //   }catch(e){
+  //     console.log(e)
+  //   }
+  // }
+
   const fetchData = async() => {
     try{
-     await fetch("/api/v1/ticket",{
+     await fetch(`/api/v1/ticket/g/${ticketid}`,{
+      // ${ticketid}
+      method:"GET" ,
       headers: {
                  Authorization: 'Bearer ' + localStorage.getItem('token'),
               },
@@ -20,6 +36,17 @@ const [user, setUser] = useState([]);
       console.log(e)
     }
   }
+  // console.log('====================================');
+  // console.log(ticketid);
+  // console.log('====================================');
+  // const deleteBlogs = async (id: string) => {
+  //   try {
+  //     const request = await fetch(`/api/v1/blog/${id}`, {
+  //       method: 'DELETE',
+  //       headers: {
+  //         Authorization: 'Bearer ' + localStorage.getItem('token'),
+  //       },
+  //     });
 
   useEffect(() => {
     fetchData();

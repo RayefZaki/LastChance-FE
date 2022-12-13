@@ -58,8 +58,8 @@ function Router1() {
 <Route path="/" element={<WelcomePage/>}/>
 <Route path="/Login" element={<LoginPage/>}/>
 <Route path="/Register" element={<RegisterPage/>}/>
-<Route path='/GetTicket' element={<GetTickets/>}/>
-<Route path='/PageTicket' element={<PageTicket/>}/>
+<Route path='/getticket' element={<GetTickets/>}/>
+<Route path='/pageticket/:ticketid' element={<PageTicket/>}/>
 <Route path='/thankyou' element={<Thankyou/>}/>
 <Route path='/thanks' element={<Thankyou2/>}/>
 

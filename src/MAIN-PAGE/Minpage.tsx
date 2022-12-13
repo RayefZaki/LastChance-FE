@@ -1,5 +1,6 @@
 import { Box, Button, Center, Heading, Img , Text } from '@chakra-ui/react'
 import React, { useState,useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import './Mainpage.css'
 
 function Minpage() {
@@ -41,7 +42,9 @@ function Minpage() {
     </Box>
 
 
-    <div className='Back' >
+    <div 
+    key={e.id}
+    className='Back' >
 
     <Img src={e.image}>
     </Img>
@@ -57,8 +60,10 @@ function Minpage() {
     <Text>{e.locationEvent}</Text>
     <Text>{e.shortDisc}</Text>
     </Box>
+    <Link to ={`/pageticket/${e.id}`}>
     <Button position={'relative'} top={"58px"} 
     color={"BLACK"} width={"98px"} bg={"#A259ff"}>DISCOVER  </Button>
+    </Link>
       </div>
     
     </div>
