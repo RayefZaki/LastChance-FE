@@ -1,93 +1,56 @@
 import React, { useState ,useEffect} from 'react'
 import { Stack,Box, Image,Text, HStack ,Heading,VStack} from '@chakra-ui/react'
 export default function AddTickets() {
-  // const [blogs, setBlogs] = useState<string[]>([]);
-  const [type,setType] = useState('');
-  // const [price,setPrice] = useState('');
-  // const [seatLocations,setSeatLocations] = useState('')
-  const [numberOfTickets,setNumberOfTickets] = useState('');
-      const [allData, setAllData] = useState<string[]>([]);
 
-    useEffect(() => {
-      const fetchBlogs = async () => {
-        const request = await fetch('/api/v1/ticket', {
-          headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('token'),
-          },
-        });
-        const data = await request.json();
-        setAllData(data);
-  
-      };
-    },[]);
     
+const [user, setUser] = useState([]);
 
-  
 
+  const fetchData = async() => {
+    try{
+     await fetch("/api/v1/ticket",{
+      headers: {
+                 Authorization: 'Bearer ' + localStorage.getItem('token'),
+              },
+     })
+          .then((response) => response.json())
+          .then((data) => setUser(data));
+    }catch(e){
+      console.log(e)
+    }
+  }
 
+  useEffect(() => {
+    fetchData();
+  },[])
 
   return (
-    // <div>
+     <div>
 
-    // {allData.map((e)=>{e})
-    /* {allData} */
-    // <Text>ssd</Text>
-       /* <VStack>
+{user.map((blog: any) => (
+        <VStack>
           
           <Box bg={'#393737'} margin={'0 auto'} width={'98%'} padding={'2'} display={'flex'} justifyContent={'space-between'}
                borderRadius={'7'} color={'white'} marginTop={'1.5'}>
                 <Box>
                   <HStack bg={'#393737'}>
-              <Text bg={'#393737'} fontSize={'2xl'}></Text>
+              <Text bg={'#393737'} fontSize={'2xl'}>{blog.type}</Text>
               </HStack>
               </Box>
               <Box bg={'#393737'} marginTop={'2'} w={'30%'} display={'flex'} justifyContent={'space-between'}>
-              <Text bg={'#393737'}>{}</Text>
-              <Text bg={'#393737'}>2</Text>
-              <Text bg={'#393737'}>10</Text>
+              <Text bg={'#393737'}>{blog.price}$</Text>
+              <Text bg={'#393737'}>{blog.seatsLocation}</Text>
+              <Text bg={'#393737'}>{blog.numberOfTicket}</Text>
               </Box>
               </Box>
-          </VStack> */
-    // </div>
+          </VStack> 
+))}
+     </div>
+
    
-    <VStack border='1px' padding='10' width='20rem' borderRadius='0.2rem'>
-    {allData.map((blog: any) => (
-      <HStack
-        overflow='auto'
-        width='100%'
-        key={blog.id}
-        border='1px'
-        padding='3'
-        justifyContent='space-between'
-        borderRadius='0.5rem'
-      >
-        <HStack  overflow='auto'
-
-        justifyContent='space-between'
-        width='100%'
-        flexDirection='column'
-
-        
-        >
-            
-        <Heading fontSize='1rem'>{blog.type}</Heading>
-        
-        <Text bg={'white'} fontSize='1rem'>{blog.id}</Text>
-        </HStack>
-
-      
-      </HStack>
-   
-    
-    )
-  
-    )}
-      </VStack>
-
- 
-
-
-
 
   )
     }
+
+
+ 

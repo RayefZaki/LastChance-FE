@@ -20,8 +20,7 @@ export const App = () => (
 
 
   <ChakraProvider theme={theme}>
-  {/* <FIRST></FIRST> */}
-  {/* <PageTicket/> */}
+ 
 <Router1/>
   </ChakraProvider>
   </BrowserRouter>
