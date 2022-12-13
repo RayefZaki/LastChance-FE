@@ -2,11 +2,7 @@ import styled from 'styled-components'
 
 
 export const Wrapper = styled.nav`
-    position:relative;
-
-   
-    
-   
+    position:sticky;
     border-bottom: 1px solid ;
     background-color: #2B2B2B;
 
