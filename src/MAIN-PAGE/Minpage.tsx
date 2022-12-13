@@ -1,4 +1,4 @@
-import { Box, Button, Center, Heading, Img , Text } from '@chakra-ui/react'
+import { Box, Button, Center, Heading, HStack, Img , Text } from '@chakra-ui/react'
 import React, { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import './Mainpage.css'
@@ -54,16 +54,21 @@ function Minpage() {
           
            bgGradient={"linear(to-r,blackAlpha.200,blackAlpha.200)"} w={"100"} h={'100vh'}></Center>
         </div> */}
-    <Box >
+    <Box marginLeft={'10'}>
     <Text>{e.dateEvent}</Text>
     <Text>{e.locationCity}</Text>
     <Text>{e.locationEvent}</Text>
     <Text>{e.shortDisc}</Text>
     </Box>
     <Link to ={`/pageticket/${e.id}`}>
+    <HStack>
     <Button position={'relative'} top={"58px"} 
     color={"BLACK"} width={"98px"} bg={"#A259ff"}>DISCOVER  </Button>
     </Link>
+    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Sell</Button>
+     <Button position={'relative'} top={"58px"} 
+    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Buy  </Button>
+    </HStack>
       </div>
     
     </div>
