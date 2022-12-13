@@ -7,6 +7,7 @@ import {
     useBreakpointValue,
     AspectRatio
   } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar';
   
   export default function WelcomePage() {
@@ -56,6 +57,7 @@ import Navbar from '../components/navbar/Navbar';
                 Last chacne is PlatForm allow to any one to sell or buy a thickets Until the last chance at the start of the event 
             </Text>
             <Stack direction={'row'}>
+              <Link to ="/home">
               <Button
                 bg={'#A259FF'}
                 rounded={'full'}
@@ -63,6 +65,7 @@ import Navbar from '../components/navbar/Navbar';
                 _hover={{ bg: 'black' }}>
                 Show me more
               </Button>
+              </Link>
              
             </Stack>
           </Stack>

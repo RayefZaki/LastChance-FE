@@ -1,11 +1,13 @@
 import { Stack, Button, Flex, Box } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState ,useEffect} from 'react'
 import Minpage from '../MAIN-PAGE/Minpage'
 
 function FIRST() {
+  
+
   return (<div>
 
-<h1>TOP EVENTS</h1> 
+<h1>ALL EVENTS</h1> 
 
 
 
@@ -32,20 +34,14 @@ sell your ticket      </Button>
             </Stack>
       <div className="cadrss"  >
      
-      <Minpage  ></Minpage>
+      <Minpage></Minpage>
       
 
 
 
  </div>
- <h1 className='h'>ALL EVENTS</h1> 
 
- <div className="cadrss2">
 
- 
-      <Minpage ></Minpage>
-   
- </div>
  <div className="cadrss2">
 
  

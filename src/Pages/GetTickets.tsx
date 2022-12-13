@@ -25,8 +25,8 @@ import {
 
 export default function GetTickets() {
     const [type, setType] = useState('');
-    const [numberOfTicket, setNumberOfTicket] = useState(0);
-    const [price, setPrice] = useState(0);
+    const [numberOfTicket, setNumberOfTicket] = useState<number>(0);
+    const [price, setPrice] = useState<number>(0);
     const [seatsLocation, setSeatsLocation] = useState('');
     const [image,setImage] = useState('')
   
@@ -101,20 +101,17 @@ export default function GetTickets() {
               color={'black'} placeholder={'Catogry'}
                onChange={(e) => setType(e.target.value)}  value={type} type="type" />
       </FormControl>
-      <Text>Number Of Ticket</Text>
-      <FormControl id="Number Of Ticket" >
-            <NumberInput borderRadius={'2xl'} bg='white' color={'black'} defaultValue={1} min={1} max={5}>
-             <NumberInputField />
-             <NumberInputStepper>
-             <NumberIncrementStepper />
-             <NumberDecrementStepper />
-             </NumberInputStepper>
-            </NumberInput>
-            </FormControl>
+      
+           
       <FormControl id="text">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'image'} 
               onChange={(e) => setImage(e.target.value)}  value={image} type="text" />
+      </FormControl>
+      <FormControl id="price">
+        <Input borderRadius={'2xl'} bg='white' 
+              color={'black'} placeholder={'Tickets'}
+               onChange={(e) => setNumberOfTicket(+e.target.value)}   type="price" />
       </FormControl>
       <FormControl id="price">
         <Input borderRadius={'2xl'} bg='white' 

@@ -16,6 +16,10 @@ import Navbar1 from './navbar/Navbar';
 import Logout from './Logout';
 import TicketD from '../Pages/TicketD';
 import FIRST from '../Pages/FIRST';
+import Thankyou from '../Pages/ThankyouPage';
+import Thankyou2 from '../Pages/ThankyouPage2';
+
+
 import GetTickets from '../Pages/GetTickets';
 
 
@@ -49,13 +53,17 @@ function Router1() {
 <Routes>
 <Route path="/D" element={<TicketD/>}/>
 
-<Route path="/F" element={<FIRST/>}/>
+<Route path="/home" element={<FIRST/>}/>
 
 <Route path="/" element={<WelcomePage/>}/>
 <Route path="/Login" element={<LoginPage/>}/>
 <Route path="/Register" element={<RegisterPage/>}/>
 <Route path='/GetTicket' element={<GetTickets/>}/>
 <Route path='/PageTicket' element={<PageTicket/>}/>
+<Route path='/thankyou' element={<Thankyou/>}/>
+<Route path='/thanks' element={<Thankyou2/>}/>
+
+
 
         <Route element={<ProtectedRoute />}>
           {/* <Route path='/' element={<BlogsPage/>} /> */}

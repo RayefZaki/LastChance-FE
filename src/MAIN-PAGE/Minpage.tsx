@@ -1,44 +1,78 @@
-import { Img } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Button, Center, Heading, Img , Text } from '@chakra-ui/react'
+import React, { useState,useEffect } from 'react'
 import './Mainpage.css'
+
 function Minpage() {
+  const [user, setUser] = useState([]);
+  
+
+  const fetchData = async() => {
+    try{
+     await fetch("/api/v1/ticketAdmin",{
+      headers: {
+                 Authorization: 'Bearer ' + localStorage.getItem('token'),
+              },
+     })
+          .then((response) => response.json())
+          .then((data) => setUser(data));
+    }catch(e){
+      console.log(e)
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  },[])
+
+
+
   return (
+    <>
+    {user.map((e:any)=>(
     <div className='CardM'>
-    
-    <div className='Front'>
+       
+    <Box className='Front' backgroundImage={e.image} backgroundSize={"cover"} backgroundRepeat={"no-repeat"}>
 
-        <img src='https://cdn.discordapp.com/attachments/1036228185756541008/1051529473754939435/pexels-hygor-sakai-2311713.jpg'></img>
-    </div>
+        <div className='na'>
+          <Center
+          
+           bgGradient={"linear(to-r,blackAlpha.200,blackAlpha.200)"}><Heading>{e.eventName}</Heading></Center>
+        </div>
+    </Box>
 
 
-    <div className='Back'>
-    <Img src='https://cdn.discordapp.com/attachments/1036228185756541008/1051529473754939435/pexels-hygor-sakai-2311713.jpg'>
+    <div className='Back' >
+
+    <Img src={e.image}>
     </Img>
-    <div className='text-on-image'>
-            
-          {/* <h1> هنا طبعا يعيال بيكون الوصف  وي رب تعجبكم :) " ماجد تقول مخيسة ياويلك وشل ستيكي من الناف حقك تكفى"</h1> */}
-
-            
-          {/* <p> طبعا عشان السيد رايف مادخلني رابط الباك اند بكرى  نسوي انسيرت للايفينت مع الصور وكلشي يعني اصير ادخل البيانات وينضاف كرت مباشرة</p> */}
+    <div  className='text-on-image'>
+    {/* <div className='na'>
+          <Center
+          
+           bgGradient={"linear(to-r,blackAlpha.200,blackAlpha.200)"} w={"100"} h={'100vh'}></Center>
+        </div> */}
+    <Box >
+    <Text>{e.dateEvent}</Text>
+    <Text>{e.locationCity}</Text>
+    <Text>{e.locationEvent}</Text>
+    <Text>{e.shortDisc}</Text>
+    </Box>
+    <Button position={'relative'} top={"58px"} 
+    color={"BLACK"} width={"98px"} bg={"#A259ff"}>DISCOVER  </Button>
       </div>
-
-
+    
     </div>
 
 
-    
-    
-    
-    
-    
+  
     
     
     
     </div>
 
 
-
-
+  ))}
+</>
 
   )
 }
