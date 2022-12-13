@@ -32,20 +32,20 @@ function Minpage() {
     <div className='CardM'>
     <div className='Front'>
 
-        <img src='https://cdn.discordapp.com/attachments/1036228185756541008/1051529473754939435/pexels-hygor-sakai-2311713.jpg'></img>
+        <img src={e.image}></img>
     </div>
 
 
     <div className='Back'>
-    <Img src='https://cdn.discordapp.com/attachments/1036228185756541008/1051529473754939435/pexels-hygor-sakai-2311713.jpg'>
+    <Img src={e.image}>
     </Img>
     <div  className='text-on-image'>
             
     <h1>{e.eventName}</h1>
-    {/* <Text>{e.dataEvent}</Text> */}
-    {/* <Text>{e.locationCity}</Text> */}
-    {/* <Text>{e.locationEvent}</Text> */}
-    {/* <Text>{e.shortDisc}</Text> */}
+    <Text>{e.dataEvent}</Text>
+    <Text>{e.locationCity}</Text>
+    <Text>{e.locationEvent}</Text>
+    <Text>{e.shortDisc}</Text>
       </div>
 
 
