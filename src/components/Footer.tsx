@@ -69,6 +69,7 @@ import {
   export default function SmallCentered() {
     return (
       <Box
+  
       boxShadow='xs' 
       borderTopWidth={1}
       borderStyle={'solid'}
