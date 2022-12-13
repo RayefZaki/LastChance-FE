@@ -25,7 +25,7 @@ export const App = () => (
   <ChakraProvider theme={theme}>
  <Box margin={'0'} bg={'#2b2b2b'}>
 <Router1/>
-<TicketPage></TicketPage>
+{/* <TicketPage></TicketPage> */}
 </Box>
   </ChakraProvider>
   </BrowserRouter>
