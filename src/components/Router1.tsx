@@ -52,10 +52,8 @@ function Router1() {
 
 <Routes>
 <Route path="/D" element={<TicketD/>}/>
-
-<Route path="/home" element={<FIRST/>}/>
-
 <Route path="/" element={<WelcomePage/>}/>
+<Route path="/home" element={<FIRST/>}/>
 <Route path="/Login" element={<LoginPage/>}/>
 <Route path="/Register" element={<RegisterPage/>}/>
 <Route path='/GetTicket' element={<GetTickets/>}/>
