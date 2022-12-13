@@ -30,7 +30,7 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
     
     
   return (
-    <HStack  spacing={2} marginTop={props.marginTop}>
+    <HStack  color="white" spacing={2} marginTop={props.marginTop}>
       {props.tags.map((tag) => {
         return (
           <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
@@ -50,7 +50,7 @@ interface BlogAuthorProps {
 export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
     
   return (
-    <HStack bg="#2b2b2b" marginTop="2" spacing="2" display="flex" alignItems="center">
+    <HStack bg="white" marginTop="2" spacing="2" display="flex" alignItems="center">
       <Image
         borderRadius="full"
         boxSize="40px"
@@ -71,7 +71,7 @@ const ArticleList = () => {
         min: 0,
       })
   return (
-    <Container  maxW={'7xl'} p="12">
+    <Container color="white" maxW={'7xl'} p="12">
       <Heading as="h1">Ticket informaiton</Heading>
       <Box
                         bgGradient={'linear(to-r, blackAlpha.700, transparent)'}
@@ -88,7 +88,7 @@ const ArticleList = () => {
           position="relative"
           alignItems="center">
           <Box
-                  bgGradient={'linear(to-r, blackAlpha.900, transparent)'}
+                                  bgGradient={'linear(to-r, blackAlpha.900, transparent)'}
 
             width={{ base: '100%', sm: '100%' }}
             zIndex="2"
@@ -132,7 +132,7 @@ Ticket details            </Link>
           <Text
             as="p"
             marginTop="2"
-            color={useColorModeValue('gray.700', 'gray.200')}
+            color="white"
             fontSize="lg"
             marginBottom="3">
 
@@ -146,7 +146,7 @@ Ticket details            </Link>
                   <Text
             as="p"
             marginTop="2"
-            color={useColorModeValue('gray.700', 'gray.200')}
+            color="white"
             fontSize="lg"
             marginBottom="3">
             Lorem Ipsum is simply dummy text of the printing and typesetting
