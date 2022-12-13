@@ -7,7 +7,7 @@ function FIRST() {
 
   return (<div>
 
-<h1>TOP EVENTS</h1> 
+<h1>ALL EVENTS</h1> 
 
 
 
@@ -40,14 +40,8 @@ sell your ticket      </Button>
 
 
  </div>
- <h1 className='h'>ALL EVENTS</h1> 
 
- <div className="cadrss2">
 
- 
-      <Minpage ></Minpage>
-   
- </div>
  <div className="cadrss2">
 
  
