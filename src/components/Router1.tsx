@@ -16,7 +16,7 @@ import Navbar1 from './navbar/Navbar';
 import Logout from './Logout';
 import TicketD from '../Pages/TicketD';
 import FIRST from '../Pages/FIRST';
-
+import GetTickets from '../Pages/GetTickets';
 
 
 
@@ -54,7 +54,7 @@ function Router1() {
 <Route path="/" element={<WelcomePage/>}/>
 <Route path="/Login" element={<LoginPage/>}/>
 <Route path="/Register" element={<RegisterPage/>}/>
-{/* <Route path='/GetTicket' element={<GetTickets/>}/> */}
+<Route path='/GetTicket' element={<GetTickets/>}/>
 <Route path='/PageTicket' element={<PageTicket/>}/>
 
         <Route element={<ProtectedRoute />}>
