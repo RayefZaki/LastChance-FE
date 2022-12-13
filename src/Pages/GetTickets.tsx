@@ -129,7 +129,7 @@ export default function GetTickets() {
         </Button>
         <HStack>
           <Text>Already have account ?</Text>
-          <Link to='/GetTicket'>Login</Link>
+          <Link to='/login'>Login</Link>
         </HStack>
       </Stack>
     </Stack>

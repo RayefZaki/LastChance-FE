@@ -2,6 +2,7 @@ import React from 'react'
 import {Routes,Route, useNavigate}from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
 import { RegisterPage } from '../Pages/RegisterPage';
+import ArticleList from '../Pages/TicketD';
 import {LoginPage} from '../Pages/LoginPage';
 import { Box } from '@chakra-ui/react';
 import Footer from '../components/Footer';
@@ -13,7 +14,8 @@ import Navbar from './navbar/Navbar';
 import Navbar1 from './navbar/Navbar';
 
 import Logout from './Logout';
-import GetTickets from '../Pages/GetTickets';
+import TicketD from '../Pages/TicketD';
+import FIRST from '../Pages/FIRST';
 
 
 
@@ -39,30 +41,28 @@ function Router1() {
   return (
    
 
-<Box
-
-// bg={"#2b2b2b"}
->   
+<Box>   
 {logout1()}
 
 
 
 <Routes>
+<Route path="/D" element={<TicketD/>}/>
 
+<Route path="/F" element={<FIRST/>}/>
 
 <Route path="/" element={<WelcomePage/>}/>
 <Route path="/Login" element={<LoginPage/>}/>
 <Route path="/Register" element={<RegisterPage/>}/>
-<Route path='/GetTicket' element={<GetTickets/>}/>
+{/* <Route path='/GetTicket' element={<GetTickets/>}/> */}
 <Route path='/PageTicket' element={<PageTicket/>}/>
 
-<Route element={<ProtectedRoute />}>
-{/* <Route path='/' element={<BlogsPage/>} /> */}
-</Route>
+        <Route element={<ProtectedRoute />}>
+          {/* <Route path='/' element={<BlogsPage/>} /> */}
+        </Route>
 
-</Routes>
-<Footer/>
-
+      </Routes>
+      <Footer />
 
 
 </Box>
