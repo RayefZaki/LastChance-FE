@@ -15,20 +15,20 @@ body{
 }
 .CardM{
     cursor: pointer;
-    width: 300px;
+    width: 250px;
     height: 250px;
 }
 .Front{
-    width: 30%;
-    height: 100%;
+    width: 250px;
+    height: 250px;
     overflow: hidden;
     backface-visibility: hidden;
     position: absolute;
     transition: transform .6s linear;
 }
 .Back{ 
-    width: 20%;
-    height: 100%;
+    width: 250px;
+    height: 250px;
     overflow: hidden;
     backface-visibility: hidden;
     position: absolute;
@@ -37,19 +37,34 @@ body{
 }
 
 .Front img{
-height: 100%;
+height: 250px;
+width: 250px;
+
+}
+.Back img{
+    height: 250px;
+    width: 250px;
+    filter: blur(5px);    
 }
 .Front{
+    border-radius: 15%;
+    box-shadow: 0px 0px 15px 6px #A259FF;
+
+
+    
     transform: perspective(600px)rotateY(0deg);
 }
 
 .Back{
-   
+    box-shadow: 0px 0px 15px 6px #A259FF;
 
+
+    border-radius: 20%;
     background-color: blueviolet;
     transform: perspective(600px)rotateY(180deg);
 }
 .CardM:hover> .Front{
+    
     transform: perspective(600px)rotateY(-180deg);
 
 }
@@ -57,3 +72,45 @@ height: 100%;
     transform: perspective(600px)rotateY(0deg);
 
 }
+.cadrss{
+
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    
+}
+
+
+
+.cadrss2{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+h1{
+    font-size: xx-large;
+
+    margin: 85px 0px 0px 0px;
+    color: aliceblue;
+}
+.h{
+    font-size: xx-large;
+    margin: 70px 0px 0px 0px;
+    color: aliceblue;
+
+}
+.discripshon{
+    font-size: xx-large;
+
+}
+.head-text {
+    position: relative;
+ }
+ .text-on-image {
+   position:sticky;
+   
+   right: 50%;
+   left: 50%;
+   bottom: 15%;
+   color: white;
+ }
