@@ -75,13 +75,13 @@ import Navbar from '../components/navbar/Navbar';
         <Flex flex={1}>
          
           <Image 
-          marginLeft={"30%"}
+          marginLeft={"20%"}
           boxShadow={"-0px 0px 40px 10px black" }
           border={'1px solid black'}
           borderRadius="2xl"
             alt={'Login Image'}
             objectFit={'cover'}
-            h={'73%'}
+            h={'74%'}
             width={"75%"}
             marginTop={'17%'}
             src={
