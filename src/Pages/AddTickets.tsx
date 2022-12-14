@@ -1,11 +1,12 @@
 import React, { useState ,useEffect} from 'react'
 import { Stack,Box, Image,Text, HStack ,Heading,VStack, Button} from '@chakra-ui/react'
 import { Link } from 'react-router-dom';
-export default function AddTickets(ticketid :any) {
+// import {  setTimeout } from 'timers';
+export default function AddTickets(ticketid:any) {
 
     
 const [user, setUser] = useState([]);
-  
+const [price,setPrice] = useState(0)
 
   // const fetchData = async() => {
   //   try{
@@ -39,18 +40,28 @@ const [user, setUser] = useState([]);
       console.log(e)
     }
   }
- 
 
+  const tmeOut = () =>{
+    setInterval(()=>{
+      let a = user.map((e:any)=>e.price )
+      },3000)
+    
+    
+  } 
+  
+  
+  let f = 3
   useEffect(() => {
+    
+    tmeOut()
     fetchData();
   },[])
-     
-
-
- 
+  
 
   return (
      <div>
+
+      
 
 {user.map((e: any) => (
         <VStack >
@@ -63,10 +74,13 @@ const [user, setUser] = useState([]);
               </HStack>
               </Box>
               <Box bg={'#393737'} marginTop={'2'} w={'30%'} display={'flex'} justifyContent={'space-between'}>
-              <Text bg={'#393737'}>{e.price}$</Text>
+              <Text bg={'#393737'}>{
+              e.price
+              
+              }$</Text>
               <Text bg={'#393737'}>{e.seatsLocation}</Text>
               <Text bg={'#393737'}>{e.numberOfTicket}</Text>
-              <Button shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button>
+            <Link to={'/d'}>  <Button  shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button></Link>
               </Box>
               </Box>
           </VStack> 
@@ -77,6 +91,3 @@ const [user, setUser] = useState([]);
 
   )
     }
-
-
- 
