@@ -22,6 +22,7 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { Link, useNavigate, useParams } from 'react-router-dom';
+import UpLoadImag from './UpLoadImag';
 
 export default function GetTickets() {
     const [type, setType] = useState('');
@@ -117,9 +118,7 @@ export default function GetTickets() {
       
            
       <FormControl id="text">
-        <Input borderRadius={'2xl'} bg='white' 
-              color={'black'} placeholder={'image'} 
-              onChange={(e) => setImage(e.target.value)}  value={image} type="text" />
+        <UpLoadImag></UpLoadImag>
       </FormControl>
       <FormControl id="price">
         <Input borderRadius={'2xl'} bg='white' 

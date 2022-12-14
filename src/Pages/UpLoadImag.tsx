@@ -1,7 +1,7 @@
 import { Input } from '@chakra-ui/react';
 import React,{ useState }  from 'react';
 
-function Testimag() {
+function UpLoadImag() {
   const [filebase64,setFileBase64] = useState<string>("")
 
   function formSubmit(e: any) {
@@ -52,4 +52,4 @@ function Testimag() {
   );
 }
 
-export default Testimag;
+export default UpLoadImag;
