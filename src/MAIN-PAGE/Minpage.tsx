@@ -60,14 +60,19 @@ function Minpage() {
     <Text>{e.locationEvent}</Text>
     <Text>{e.shortDisc}</Text>
     </Box>
-    <Link to ={`/pageticket/${e.id}`}>
+   
     <HStack>
-    <Button position={'relative'} top={"58px"} 
-    color={"BLACK"} width={"98px"} bg={"#A259ff"}>DISCOVER  </Button>
+    <Link to ={`/pageticket/${e.id}`}>
+    <Button 
+    position={'relative'} top={"58px"} 
+    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Buy</Button>
     </Link>
-    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Sell</Button>
+
+    <Link to ={`/getticket/${e.id}`}>
      <Button position={'relative'} top={"58px"} 
-    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Buy  </Button>
+    color={"BLACK"} width={"98px"} bg={"#A259ff"}>sell  </Button>
+    </Link>
+
     </HStack>
       </div>
     
