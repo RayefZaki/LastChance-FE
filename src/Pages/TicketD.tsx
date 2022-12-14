@@ -165,7 +165,7 @@ Ticket details            </Link>
           <Box>
           
      
-          <Button color="wihte" background="#A259FF"  width="20%" shadow="dark-lg" marginRight="4">bay </Button>    
+          <Button  color="wihte" background="#A259FF"  width="20%" shadow="dark-lg" marginRight="4">Buy </Button>    
                   <Button color="wihte" background="blackAlpha.400" boxShadow="dark-lg" width="20%">BACK </Button>
                   </Box>
         </Box>
