@@ -56,15 +56,15 @@ const Navbar: React.FC<Props> = ({ links, logo }) => {
                                             <Link to ={link.link}>
                                                 
                                              <Button 
-                                             
-                                           boxShadow={"-10px 0px 30px 10px black" }
+                                                       boxShadow={"-0px 0px 40px 3px black" }
+
                                              
                                              onClick={logout}
                                             
                                 
-                                             width={'150px'} 
-                                             borderRadius={'50px'}
-                                             margin={'20px auto 15px 10px'}
+                                             width={'100px'} 
+                                            //  borderRadius={'20px'}
+                                             margin={'20px 10PX 15px 10px'}
                                              bg={'#A259FF'}
                                              color={'white'}
                                              _hover={{
