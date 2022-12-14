@@ -1,29 +1,51 @@
 import React, { useState ,useEffect} from 'react'
 import { Stack,Box, Image,Text, HStack ,Heading,VStack, Button} from '@chakra-ui/react'
 import { Link } from 'react-router-dom';
-export default function AddTickets() {
+export default function AddTickets(ticketid :any) {
 
     
 const [user, setUser] = useState([]);
   
 
+  // const fetchData = async() => {
+  //   try{
+  //    await fetch("/api/v1/ticket",{
+  //     headers: {
+  //                Authorization: 'Bearer ' + localStorage.getItem('token'),
+  //             },
+  //    })
+  //         .then((response) => response.json())
+  //         .then((data) => setUser(data));
+  //   }catch(e){
+  //     console.log(e)
+  //   }
+  // }
+  ticketid =ticketid.ticketid
   const fetchData = async() => {
     try{
-     await fetch("/api/v1/ticket",{
+    console.log(ticketid);
+    
+     await fetch(`/api/v1/ticket/g/${ticketid}/`,{
+      // ${ticketid}
+      method:"GET" ,
       headers: {
                  Authorization: 'Bearer ' + localStorage.getItem('token'),
               },
      })
           .then((response) => response.json())
           .then((data) => setUser(data));
+       
     }catch(e){
       console.log(e)
     }
   }
+ 
 
   useEffect(() => {
     fetchData();
   },[])
+     
+
 
  
 

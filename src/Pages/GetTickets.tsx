@@ -21,7 +21,7 @@ import {
     NumberInputStepper
   } from '@chakra-ui/react';
   import { useState } from 'react';
-  import { Link, useNavigate } from 'react-router-dom';
+  import { Link, useNavigate, useParams } from 'react-router-dom';
 
 export default function GetTickets() {
     const [type, setType] = useState('');
@@ -29,11 +29,12 @@ export default function GetTickets() {
     const [price, setPrice] = useState<number>(0);
     const [seatsLocation, setSeatsLocation] = useState('');
     const [image,setImage] = useState('')
-  
+  let eventByAdmin_id = useParams()
     const navigate = useNavigate();
-  
+
     const toast = useToast();
-  
+    eventByAdmin_id =eventByAdmin_id.ticketid as any
+
     const submitTicket = async () => {
       try {  
         const request = await fetch('/api/v1/ticket', {
@@ -43,7 +44,7 @@ export default function GetTickets() {
             Authorization: 'Bearer ' + localStorage.getItem('token'),
 
           },
-          body: JSON.stringify({ type, price, numberOfTicket,seatsLocation,image}),
+          body: JSON.stringify({ type, price, numberOfTicket,seatsLocation,image,eventByAdmin_id}),
         });
   
         const data = await request.json();
