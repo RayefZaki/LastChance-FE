@@ -91,6 +91,14 @@ import Navbar from '../components/navbar/Navbar';
 
   <Flex flex={1}>
     <Image
+        marginTop={'5%'}
+
+     h={'93%'}
+     width={"75%"}
+      marginLeft={"33%"}
+      boxShadow={"-0px 0px 40px 10px black" }
+      border={'1px solid black'}
+      borderRadius="2xl"
       alt={'Login Image'}
       objectFit={'cover'}
       src={
@@ -99,7 +107,8 @@ import Navbar from '../components/navbar/Navbar';
     />
   </Flex>
   <Flex p={8} flex={1} align={'center'} justify={'center'}>
-    <Stack border={'1px solid white'} borderRadius={'2xl'} padding={'14'}  color={"white"} spacing={4} w={'200'} maxW={'md'}>
+    <Stack    border={'1px solid black'}borderRadius={'2xl'} boxShadow="-50px 0px 40px 10px black"       marginRight={"20%"}
+ padding={'14'}  color={"white"} spacing={4} width="75%"h={"100%"}> 
     <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
             ></Image>
       <Heading fontSize={'2xl'}>Create Account</Heading>
@@ -139,7 +148,7 @@ import Navbar from '../components/navbar/Navbar';
           justify={'space-between'}>
           <Checkbox>Remember me</Checkbox>
         </Stack>
-        <Button onClick={submitRegister} colorScheme={'purple'} variant={'solid'}>
+        <Button borderRadius={"2xl"} boxShadow={"-10px 0px 30px 10px black" } onClick={submitRegister} bg={'#A259FF'} variant={'solid'}>
           Sign up
         </Button>
         <HStack>

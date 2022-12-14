@@ -68,21 +68,32 @@ import Navbar from '../components/navbar/Navbar';
 
       <>
             <Stack 
+            height={"80%"}
+            
             bg='#2b2b2b'
             margin={'0'} h={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex flex={1}>
-          <Image
+         
+          <Image 
+          marginLeft={"30%"}
+          boxShadow={"-0px 0px 40px 10px black" }
+          border={'1px solid black'}
+          borderRadius="2xl"
             alt={'Login Image'}
             objectFit={'cover'}
-            h={'99%'}
-            marginTop={'1.5'}
+            h={'73%'}
+            width={"75%"}
+            marginTop={'17%'}
             src={
               'https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png'
             }
           />
         </Flex>
-        <Flex  p={8} flex={1} align={'center'} justify={'center'}>
-          <Stack border={'1px solid white'}  padding={'14'} color={"white"} spacing={4} w={'200'} maxW={'md'}>
+        <Flex 
+         marginRight={"50%"}
+  p={8} flex={1} align={'center'} justify={'center'}>
+          <Stack          marginRight={"30%"}
+ border={'1px solid black'}borderRadius={'2xl'} boxShadow="-50px 0px 40px 10px black" padding={'14'} color={"white"} spacing={4} w={'200'} maxW={'md'}>
             <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
             ></Image>
             <Heading fontSize={'2xl'}>Log in to your account</Heading>
@@ -103,7 +114,7 @@ import Navbar from '../components/navbar/Navbar';
                 <Checkbox>Remember me</Checkbox>
                 <Link color={'blue.500'} to={''}>Forgot password?</Link>
               </Stack>
-              <Button onClick={submitLogin} colorScheme={'purple'} variant={'solid'}>
+              <Button borderRadius={"2xl"} boxShadow={"-10px 0px 30px 10px black" }onClick={submitLogin} bg={'#A259FF'} variant={'solid'}>
                 Log in
               </Button>
               <HStack>
