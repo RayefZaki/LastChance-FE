@@ -1,5 +1,6 @@
 import { Box, Button, Center, Heading, HStack, Img , Text } from '@chakra-ui/react'
 import React, { useState,useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import './Mainpage.css'
 
 function Minpage() {
@@ -58,10 +59,12 @@ function Minpage() {
     <Text noOfLines={[2]}>{e.shortDisc}</Text>
     </Box>
     <HStack>
-    <Button  position={'relative'} top={"58px"} 
-    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Sell</Button>
+      <Link to={`/pageticket/${e.id}`}>
+   <Button  position={'relative'} top={"58px"} 
+    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Sell</Button></Link> 
+    <Link to = {`/getticket/${e.id}`}>
      <Button position={'relative'} top={"58px"} 
-    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Buy  </Button>
+    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Buy  </Button></Link>
     </HStack>
       </div>
     
