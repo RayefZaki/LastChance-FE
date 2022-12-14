@@ -57,7 +57,7 @@ export default function PageTicket() {
           <Box >
           {/* <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png' */}
           <Img  src={user.image}
-           h={'40vh'} w={'100%'} objectFit={'cover'} marginTop={"0"} filter={'auto'} boxShadow={"-50px 0px 40px 10px #A259FF"} brightness='55%'></Img>
+           h={'40vh'} w={'100%'} objectFit={"contain"} marginTop={"0"} filter={'auto'} boxShadow={"-50px 0px 40px 10px #A259FF"} brightness='55%'></Img>
           
           </Box>
           <Link to={'/home'}>  <Button marginLeft={"80%"} marginTop={"10"} width={"15%"} shadow={'dark-lg'} bg={'#a259ff'}>back</Button></Link>
