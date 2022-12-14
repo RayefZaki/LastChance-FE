@@ -57,10 +57,10 @@ export default function PageTicket() {
           <Box >
           {/* <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png' */}
           <Img src={user.image}
-           h={'40vh'} w={'100%'} objectFit={'cover'} marginTop={"90"} filter={'auto'} brightness='60%'></Img>
+           h={'40vh'} w={'100%'} objectFit={'cover'} marginTop={"0"} filter={'auto'} boxShadow={"-50px 0px 40px 10px #A259FF"} brightness='55%'></Img>
           </Box>
            <Box shadow={'dark-lg'} margin={'0 auto 10px auto'} width={'80%'} padding={'2'} display={'flex'} justifyContent={'space-between'}
-            border={'2px solid gray'} borderRadius={'7'} color={'gray'} marginTop={'1.5'}>
+            border={'2px solid gray'} borderRadius={'7'} color={'gray'} marginTop={'10'}>
               <Box>
             <Text>CATOGARY</Text>
             </Box>
