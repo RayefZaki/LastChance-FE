@@ -2,21 +2,40 @@ import React, { useState ,useEffect} from 'react'
 import { Stack,Box, Image,Text, HStack ,Heading,VStack, Button} from '@chakra-ui/react'
 import { Link } from 'react-router-dom';
 // import {  setTimeout } from 'timers';
-export default function AddTickets() {
+export default function AddTickets(ticketid:any) {
 
     
 const [user, setUser] = useState([]);
 const [price,setPrice] = useState(0)
 
+  // const fetchData = async() => {
+  //   try{
+  //    await fetch("/api/v1/ticket",{
+  //     headers: {
+  //                Authorization: 'Bearer ' + localStorage.getItem('token'),
+  //             },
+  //    })
+  //         .then((response) => response.json())
+  //         .then((data) => setUser(data));
+  //   }catch(e){
+  //     console.log(e)
+  //   }
+  // }
+  ticketid =ticketid.ticketid
   const fetchData = async() => {
     try{
-     await fetch("/api/v1/ticket",{
+    console.log(ticketid);
+    
+     await fetch(`/api/v1/ticket/g/${ticketid}/`,{
+      // ${ticketid}
+      method:"GET" ,
       headers: {
                  Authorization: 'Bearer ' + localStorage.getItem('token'),
               },
      })
           .then((response) => response.json())
           .then((data) => setUser(data));
+       
     }catch(e){
       console.log(e)
     }
@@ -61,7 +80,7 @@ const [price,setPrice] = useState(0)
               }$</Text>
               <Text bg={'#393737'}>{e.seatsLocation}</Text>
               <Text bg={'#393737'}>{e.numberOfTicket}</Text>
-              <Button shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button>
+            <Link to={'/d'}>  <Button  shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button></Link>
               </Box>
               </Box>
           </VStack> 
@@ -72,6 +91,3 @@ const [price,setPrice] = useState(0)
 
   )
     }
-
-
- 

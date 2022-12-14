@@ -21,7 +21,7 @@ import {
     NumberInputStepper
   } from '@chakra-ui/react';
   import { useState } from 'react';
-  import { Link, useNavigate } from 'react-router-dom';
+  import { Link, useNavigate, useParams } from 'react-router-dom';
 
 export default function GetTickets() {
     const [type, setType] = useState('');
@@ -29,11 +29,12 @@ export default function GetTickets() {
     const [price, setPrice] = useState<number>(0);
     const [seatsLocation, setSeatsLocation] = useState('');
     const [image,setImage] = useState('')
-  
+  let eventByAdmin_id = useParams()
     const navigate = useNavigate();
-  
+
     const toast = useToast();
-  
+    eventByAdmin_id =eventByAdmin_id.ticketid as any
+
     const submitTicket = async () => {
       try {  
         const request = await fetch('/api/v1/ticket', {
@@ -43,7 +44,7 @@ export default function GetTickets() {
             Authorization: 'Bearer ' + localStorage.getItem('token'),
 
           },
-          body: JSON.stringify({ type, price, numberOfTicket,seatsLocation,image}),
+          body: JSON.stringify({ type, price, numberOfTicket,seatsLocation,image,eventByAdmin_id}),
         });
   
         const data = await request.json();
@@ -86,6 +87,13 @@ export default function GetTickets() {
 
   <Flex flex={1}>
     <Image
+      marginLeft={"31%"}
+      boxShadow={"-0px 0px 40px 10px black" }
+      border={'1px solid black'}
+      borderRadius="2xl"
+      h={'79%'}
+      width={"75%"}
+      marginTop={'14%'}
       alt={'Login Image'}
       objectFit={'cover'}
       src={
@@ -93,8 +101,11 @@ export default function GetTickets() {
       }
     />
   </Flex>
-  <Flex p={8} flex={1} align={'center'} justify={'center'}>
-    <Stack border={'1px solid white'} borderRadius={'2xl'} padding={'14'}  color={"white"} spacing={4} w={'200'} maxW={'md'}>
+  <Flex
+
+ p={8} flex={1} align={'center'} justify={'center'}>
+    <Stack          marginRight={"30%"}
+ border={'1px solid black'}borderRadius={'2xl'} boxShadow="-50px 0px 40px 10px black"padding={'14'}  color={"white"} spacing={4} w={'200'} maxW={'md'}>
     <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
             ></Image>
       <Heading fontSize={'2xl'}>Enter Your Ticket</Heading>
@@ -127,7 +138,7 @@ export default function GetTickets() {
       </FormControl>
       <Stack spacing={6}>
 
-        <Button onClick={submitTicket} colorScheme={'purple'} variant={'solid'}>
+        <Button  borderRadius={"2xl"} boxShadow={"-10px 0px 30px 10px black" } onClick={submitTicket} bg={'#A259FF'} variant={'solid'}>
         submit
         </Button>
        

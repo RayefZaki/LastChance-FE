@@ -140,7 +140,9 @@ export const TicketPage = () => {
             {/* </FormControl> */}
 
             <Stack spacing={6}>
-              <Button onClick={submitLogin} colorScheme={'purple'} variant={'solid'}>
+              <Button   _hover={{background: "white",color: "#A259FF", }} borderRadius={'2xl'}
+boxShadow={"-10px 0px 30px 10px black" }
+ onClick={submitLogin} colorScheme={'purple'} variant={'solid'}>
                 Send Ticket
               </Button>
 
