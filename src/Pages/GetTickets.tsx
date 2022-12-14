@@ -104,7 +104,7 @@ export default function GetTickets() {
 
  p={8} flex={1} align={'center'} justify={'center'}>
     <Stack          marginRight={"30%"}
- border={'1px solid black'}borderRadius={'2xl'} boxShadow="-50px 0px 40px 10px black"padding={'14'}  color={"white"} spacing={4} w={'200'} maxW={'md'}>
+ border={'1px solid black'}borderRadius={'2xl'} boxShadow="-50px 0px 40px 10px black"padding={'14'}  color={"white"} spacing={4} w={'300'} maxW={'md'}>
     <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
             ></Image>
       <Heading fontSize={'2xl'}>Enter Your Ticket</Heading>
@@ -118,11 +118,11 @@ export default function GetTickets() {
       <FormControl id="text">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'image'} 
-              onChange={(e) => setImage(e.target.value)}  value={image} type="text" />
+              onChange={(e) => setImage(e.target.value)}  value={image} type="text"  />
       </FormControl>
       <FormControl id="price">
         <Input borderRadius={'2xl'} bg='white' 
-              color={'black'} placeholder={'Tickets'}
+              color={'black'} placeholder ={'Tickets'}
                onChange={(e) => setNumberOfTicket(+e.target.value)}   type="price" />
       </FormControl>
       <FormControl id="price">
