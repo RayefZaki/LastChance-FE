@@ -66,7 +66,7 @@ export default function GetTickets() {
           duration: 2000,
           position: 'top',
         });
-        navigate('/login');
+        navigate('/home');
       } catch (error) {
         toast({
           title: 'Server Error !',

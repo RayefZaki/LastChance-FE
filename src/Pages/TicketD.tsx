@@ -164,8 +164,8 @@ Ticket details            </Link>
 </Box>
           <Box>
           
-     
-          <Button  color="wihte" background="#A259FF"  width="20%" shadow="dark-lg" marginRight="4">Buy </Button>    
+     <a href='https://www.paypal.com/sa/signin'><Button color="wihte" background="#A259FF"  width="20%" shadow="dark-lg" marginRight="4" > Pay </Button> </a>
+             
                   <Button color="wihte" background="blackAlpha.400" boxShadow="dark-lg" width="20%">BACK </Button>
                   </Box>
         </Box>

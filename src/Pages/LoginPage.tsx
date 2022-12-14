@@ -55,7 +55,7 @@ import Navbar from '../components/navbar/Navbar';
           position: 'top',
         });
         localStorage.setItem('token', data.token);
-        navigate('/');
+        navigate('/home');
       } catch (error) {
         toast({
           title: 'Server Error !',
