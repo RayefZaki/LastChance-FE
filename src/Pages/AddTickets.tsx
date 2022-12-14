@@ -81,6 +81,7 @@ const [price,setPrice] = useState(0)
               <Text bg={'#393737'}>{e.seatsLocation}</Text>
               <Text bg={'#393737'}>{e.numberOfTicket}</Text>
             <Link to={'/d'}>  <Button  shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button></Link>
+
               </Box>
               </Box>
           </VStack> 
