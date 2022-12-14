@@ -1,12 +1,13 @@
 import * as React from "react"
 // import './App.css'
+import theme from './components/Theme'
 import {
   Box,
   Button,
   ChakraProvider,
   Flex,
   Stack,
-  theme,
+  
   VStack,
 } from "@chakra-ui/react"
 import {Routes,Route,BrowserRouter}from 'react-router-dom';
