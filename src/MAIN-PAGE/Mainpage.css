@@ -79,7 +79,8 @@ width: 250px;
 .cadrss{
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    gap: 50px;
     margin-top: 20px;
     flex-wrap: wrap;
 }

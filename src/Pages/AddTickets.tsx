@@ -8,19 +8,7 @@ export default function AddTickets(ticketid:any) {
 const [user, setUser] = useState([]);
 const [price,setPrice] = useState(0)
 
-  // const fetchData = async() => {
-  //   try{
-  //    await fetch("/api/v1/ticket",{
-  //     headers: {
-  //                Authorization: 'Bearer ' + localStorage.getItem('token'),
-  //             },
-  //    })
-  //         .then((response) => response.json())
-  //         .then((data) => setUser(data));
-  //   }catch(e){
-  //     console.log(e)
-  //   }
-  // }
+  
   ticketid =ticketid.ticketid
   const fetchData = async() => {
     try{
@@ -41,22 +29,22 @@ const [price,setPrice] = useState(0)
     }
   }
 
-  const tmeOut = () =>{
-    setInterval(()=>{
-      let a = user.map((e:any)=>e.price )
-      },3000)
-    
-    
-  } 
+  // const timeOut = () =>{
+  //   setInterval(()=>{
+  //     let a = user.map((e:any)=>e.price -= 1)
+  //    let z= a.map((e:any)=>e)
+  //     setPrice()
+  //     },2000)   
+  // } 
   
-  
-  let f = 3
+
   useEffect(() => {
     
-    tmeOut()
+    // timeOut()
     fetchData();
   },[])
   
+  // e.preventDefault()
 
   return (
      <div>
@@ -92,3 +80,18 @@ const [price,setPrice] = useState(0)
 
   )
     }
+
+
+    // const fetchData = async() => {
+  //   try{
+  //    await fetch("/api/v1/ticket",{
+  //     headers: {
+  //                Authorization: 'Bearer ' + localStorage.getItem('token'),
+  //             },
+  //    })
+  //         .then((response) => response.json())
+  //         .then((data) => setUser(data));
+  //   }catch(e){
+  //     console.log(e)
+  //   }
+  // }
