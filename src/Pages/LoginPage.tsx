@@ -21,12 +21,14 @@ import {
   import LoginForm from '../components/Forms/LoginForm';
 import Navbar from '../components/navbar/Navbar';
 // import '../App.css'
-  
+  //rr
+
   export const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const toast = useToast();
+    console.log("aa")
     const submitLogin = async () => {
       try {
         const request = await fetch('/api/v1/auth/login', {
