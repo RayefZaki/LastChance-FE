@@ -90,7 +90,7 @@ const [price,setPrice] = useState(0)
               <Text bg={'#393737'}>{e.seatsLocation}</Text>
               <Text bg={'#393737'}>{e.numberOfTicket}</Text>
               {/* <Link to =""> */}
-              <Button shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button>
+              <Link to ={`/d/${e.id}`}>  <Button shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button> </Link>
               {/* </Link> */}
               </Box>
               </Box>
