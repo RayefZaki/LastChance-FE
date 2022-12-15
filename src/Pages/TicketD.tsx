@@ -19,60 +19,97 @@ import {
 } from '@chakra-ui/react';
 import { useCounter } from "@chakra-ui/counter"
 import Navbar from '../components/navbar/Navbar';
+import { useParams } from 'react-router-dom';
+import{ useEffect, useState } from 'react'
 
 
-interface IBlogTags {
-  tags: Array<string>;
-  marginTop?: SpaceProps['marginTop'];
-}
 
-const BlogTags: React.FC<IBlogTags> = (props) => {
+
+
+
+
+export default function ArticleList()  {
+  const [user, setUser] =useState([]as any) ;
+  const [user1, setUser1]=useState([]) as any;
+  const [n, setn]=useState(0) ;
+
+  let {ticketid }=useParams();
+  
+
+  
+ 
+  // setn()
+
+  const fetchData = async() => {
+    try{
     
-    
-  return (
-    <HStack  color="white" spacing={2} marginTop={props.marginTop}>
-      {props.tags.map((tag) => {
-        return (
-          <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
-            {tag}
-          </Tag>
-        );
-      })}
-    </HStack>
-  );
-};
+     await fetch(`/api/v1/ticket/gg/${ticketid}/`,{
+     
+      method:"GET" ,
+      headers: {
+                 Authorization: 'Bearer ' + localStorage.getItem('token'),
+              },
+     })
+          .then((response) => response.json())
+          .then((data) => setUser(data));
 
-interface BlogAuthorProps {
-  date: Date;
-  name: string;
-}
+    }catch(e){
+      console.log(e)
+    }
+  }
 
-export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
-    
-  return (
-    <HStack bg="white" marginTop="2" spacing="2" display="flex" alignItems="center">
-      <Image
-        borderRadius="full"
-        boxSize="40px"
-        src="https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png"
-        alt={`Avatar of ${props.name}`}
-      />
-      <Text fontWeight="medium">{props.name}</Text>
-      <Text>—</Text>
-      <Text>{props.date.toLocaleDateString()}</Text>
-    </HStack>
-  );
-};
 
-const ArticleList = () => {
+  const fetchData1 = async() => {
+    try{
+   
+     const request = await fetch(`/api/v1/ticketAdmin/${user[0].eventByAdmin_id}`, {
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('token'),
+      },
+    });
+     const data = await request.json();
+     console.log('====================================');
+     console.log(data+"hello world");
+     setUser1(data);
+        
+     console.log(user1)
+
+    }catch(e){
+      console.log(e)
+      console.log("This file error occurred");
+      
+    }
+  }
+
+
 
     const counter = useCounter({
         max: 10,
         min: 0,
       })
+      const event =user1.eventName
+      const location =user1.locationCity
+      const imgg =user1.image
+      const short =user1.shortDisc
+
+      useEffect(() => {
+        
+      
+      fetchData();
+      // fetchData1();
+      // user.map=(e)=>{
+      //   e.eventByAdmin_id =eventByAdmin_id
+      // }
+    },[]);
+
+
   return (
-    <Container color="white" maxW={'7xl'} p="12">
-      <Heading as="h1">Ticket informaiton</Heading>
+    <div>
+    {user.map((e: any) => (
+    <Container 
+    key={e.id}
+    color="white" maxW={'7xl'} p="12">
+      {/* <Heading as="h1"> </Heading> */}
       <Box
                         bgGradient={'linear(to-r, blackAlpha.700, transparent)'}
 
@@ -99,14 +136,18 @@ const ArticleList = () => {
               <Image
 
                 borderRadius="lg"
-                src={"https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png"
-                }
+
+   
+
+                src={"https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png"}
+                
                 objectFit="contain"
               />
             </Link>
           </Box>
           <Box zIndex="1" width="100%" position="absolute" height="100%">
             <Box
+              // eslint-disable-next-line react-hooks/rules-of-hooks
               bgGradient={useColorModeValue(
                 'radial(orange.600 1px, transparent 1px)',
                 'radial(orange.300 1px, transparent 1px)'
@@ -136,9 +177,19 @@ Ticket details            </Link>
             fontSize="lg"
             marginBottom="3">
 
-
-          price <Input type="number"></Input>
-          catogry<Input type="number"></Input>
+          {/* Event : {event} */}
+          <br />
+          {/* City : {location} */}
+        Price : {e.price}$
+        <br />
+        Category : {e.type}
+        <br />
+        Seat : {e.seatsLocation}
+{/*          
+         <Input
+          // onChange={()=>()} 
+          type="number"></Input>
+          catogry<Input  type="number"></Input> */}
 
 
           </Text>
@@ -149,31 +200,35 @@ Ticket details            </Link>
             color="white"
             fontSize="lg"
             marginBottom="3">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+        {short}
           </Text>  
           <Box>
-            <Text marginTop="10%">Number of ticket</Text>
+            <Text marginTop="10%">Number of ticket {counter.value}</Text>
+            <Text >  Total Price  {counter.value as number*e.price}</Text>
+
              <Button background="blackAlpha.400" boxShadow="dark-lg" onClick={() => counter.increment()}>+</Button>
-      <Button background="whiteAlpha.200" boxShadow="dark-lg" onClick={() => counter.decrement()} margin="4">-</Button>
-      <Text margin={1}> {counter.value}</Text>
+             <Button background="whiteAlpha.200" boxShadow="dark-lg" onClick={() => counter.decrement()} margin="4">-</Button>
+      <Text margin={1}> </Text>
 
     
 </Box>
           <Box>
           
      
-          <Button color="wihte" background="#A259FF"  width="20%" shadow="dark-lg" marginRight="4">bay </Button>    
+          <Button color="wihte" background="#A259FF"  width="20%" shadow="dark-lg" marginRight="4">buy </Button>    
                   <Button color="wihte" background="blackAlpha.400" boxShadow="dark-lg" width="20%">BACK </Button>
                   </Box>
         </Box>
         
       </Box>
 
-    </Container>
+
+    </Container >
+   
+    ))}
+     </div>
+   
   );
 };
 
-export default ArticleList;
+// export default ArticleList;
