@@ -1,10 +1,13 @@
 import React, { useState ,useEffect} from 'react'
 import { Stack,Box, Image,Text, HStack ,Heading,VStack, Button} from '@chakra-ui/react'
 import { Link } from 'react-router-dom';
-export default function AddTickets(ticketid :any) {
+// import {  setTimeout } from 'timers';
+export default function AddTickets(ticketid:any) {
 
     
 const [user, setUser] = useState([]);
+const [price,setPrice] = useState(0)
+
   
 
   // const fetchData = async() => {
@@ -43,18 +46,28 @@ const [user, setUser] = useState([]);
       console.log(e)
     }
   }
- 
+
+  // const timeOut = () =>{
+  //   setInterval(()=>{
+  //     let a = user.map((e:any)=>e.price -= 1)
+  //    let z= a.map((e:any)=>e)
+  //     setPrice()
+  //     },2000)   
+  // } 
+  
 
   useEffect(() => {
+    
+    // timeOut()
     fetchData();
   },[])
-     
-
-
- 
+  
+  // e.preventDefault()
 
   return (
      <div>
+
+      
 
 {user.map((e: any) => (
         <VStack >
@@ -71,7 +84,10 @@ const [user, setUser] = useState([]);
               </HStack>
               </Box>
               <Box bg={'#393737'} marginTop={'2'} w={'30%'} display={'flex'} justifyContent={'space-between'}>
-              <Text bg={'#393737'}>{e.price}$</Text>
+              <Text bg={'#393737'}>{
+              e.price
+              
+              }SR</Text>
               <Text bg={'#393737'}>{e.seatsLocation}</Text>
               <Text bg={'#393737'}>{e.numberOfTicket}</Text>
             <Link to ={`/d/${e.id}`}>  <Button shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button> </Link>
@@ -88,4 +104,16 @@ const [user, setUser] = useState([]);
     }
 
 
- 
+    // const fetchData = async() => {
+  //   try{
+  //    await fetch("/api/v1/ticket",{
+  //     headers: {
+  //                Authorization: 'Bearer ' + localStorage.getItem('token'),
+  //             },
+  //    })
+  //         .then((response) => response.json())
+  //         .then((data) => setUser(data));
+  //   }catch(e){
+  //     console.log(e)
+  //   }
+  // }

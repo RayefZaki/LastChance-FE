@@ -22,6 +22,7 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { Link, useNavigate, useParams } from 'react-router-dom';
+import UpLoadImag from './UpLoadImag';
 
 export default function GetTickets() {
     const [type, setType] = useState('');
@@ -65,7 +66,7 @@ export default function GetTickets() {
           duration: 2000,
           position: 'top',
         });
-        navigate('/login');
+        navigate('/home');
       } catch (error) {
         toast({
           title: 'Server Error !',
@@ -87,11 +88,11 @@ export default function GetTickets() {
 
   <Flex flex={1}>
     <Image
-      marginLeft={"31%"}
+      marginLeft={"20%"}
       boxShadow={"-0px 0px 40px 10px black" }
       border={'1px solid black'}
       borderRadius="2xl"
-      h={'79%'}
+      h={'78%'}
       width={"75%"}
       marginTop={'14%'}
       alt={'Login Image'}
@@ -105,36 +106,34 @@ export default function GetTickets() {
 
  p={8} flex={1} align={'center'} justify={'center'}>
     <Stack          marginRight={"30%"}
- border={'1px solid black'}borderRadius={'2xl'} boxShadow="-50px 0px 40px 10px black"padding={'14'}  color={"white"} spacing={4} w={'200'} maxW={'md'}>
+ border={'1px solid black'}borderRadius={'2xl'} boxShadow="-50px 0px 40px 10px black"padding={'14'}  color={"white"} spacing={4} w={'300'} maxW={'md'}>
     <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051773162842509363/image.png'
             ></Image>
       <Heading fontSize={'2xl'}>Enter Your Ticket</Heading>
       <FormControl id="Catogry">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'Catogry'}
-               onChange={(e) => setType(e.target.value)}  value={type} type="type" />
+              onChange={(e) => setType(e.target.value)}  value={type} type="type" />
       </FormControl>
       
            
-      <FormControl id="text">
-        <Input borderRadius={'2xl'} bg='white' 
-              color={'black'} placeholder={'image'} 
-              onChange={(e) => setImage(e.target.value)}  value={image} type="text" />
-      </FormControl>
       <FormControl id="price">
         <Input borderRadius={'2xl'} bg='white' 
-              color={'black'} placeholder={'Tickets'}
+              color={'black'} placeholder ={'Number Of Tickets'}
                onChange={(e) => setNumberOfTicket(+e.target.value)}   type="price" />
       </FormControl>
       <FormControl id="price">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'price'}
-               onChange={(e) => setPrice(+e.target.value)}   type="price" />
+              onChange={(e) => setPrice(+e.target.value)}   type="price" />
       </FormControl>
       <FormControl id="seatsLocation">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'Seats Location'}
-               onChange={(e) => setSeatsLocation(e.target.value)}  value={seatsLocation} type="seatsLocation" />
+              onChange={(e) => setSeatsLocation(e.target.value)}  value={seatsLocation} type="seatsLocation" />
+      </FormControl>
+      <FormControl id="image">
+              <UpLoadImag></UpLoadImag>
       </FormControl>
       <Stack spacing={6}>
 

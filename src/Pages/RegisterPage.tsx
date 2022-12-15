@@ -95,7 +95,7 @@ import Navbar from '../components/navbar/Navbar';
 
      h={'93%'}
      width={"75%"}
-      marginLeft={"33%"}
+      marginLeft={"20%"}
       boxShadow={"-0px 0px 40px 10px black" }
       border={'1px solid black'}
       borderRadius="2xl"

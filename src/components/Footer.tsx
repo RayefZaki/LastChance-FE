@@ -90,13 +90,7 @@ import {
           
           
           />
-          <Stack direction={'row'} spacing={6}>
-            <Link href={'#'}>Home</Link>
-            <Link href={'#'}>About</Link>
-            <Link href={'#'}>Contact</Link>
-            <Link href={'#'}>sell your ticket</Link>
-
-          </Stack>
+       
         </Container>
   
         <Box

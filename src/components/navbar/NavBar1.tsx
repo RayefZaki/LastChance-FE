@@ -56,8 +56,8 @@ const Navbar: React.FC<Props> = ({ links, logo }) => {
                                             <Link to ={link.link}>
                                                 
                                              <Button 
-                                              borderRadius={"2xl"} boxShadow={"-10px 0px 30px 10px black" }
-                                                
+                                              borderRadius={"2xl"}
+                                              shadow="-50px 0px 40px 10px black"  
                                              
                                              onClick={logout}
                                             

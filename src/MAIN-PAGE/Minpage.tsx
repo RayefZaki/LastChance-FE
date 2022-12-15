@@ -37,14 +37,12 @@ function Minpage() {
         <div className='na'>
           <Center
           
-           bgGradient={"linear(to-r,blackAlpha.200,blackAlpha.200)"}><Heading>{e.eventName}</Heading></Center>
+           bgGradient={"linear(to-r,blackAlpha.200,blackAlpha.200)"}><Text fontSize={"2xl"} >{e.eventName}</Text></Center>
         </div>
     </Box>
 
 
-    <div 
-    key={e.id}
-    className='Back' >
+    <div className='Back' >
 
     <Img src={e.image}>
     </Img>
@@ -54,25 +52,20 @@ function Minpage() {
           
            bgGradient={"linear(to-r,blackAlpha.200,blackAlpha.200)"} w={"100"} h={'100vh'}></Center>
         </div> */}
-    <Box marginLeft={'10'}>
-    <Text>{e.dateEvent}</Text>
-    <Text>{e.locationCity}</Text>
-    <Text>{e.locationEvent}</Text>
-    <Text>{e.shortDisc}</Text>
+    <Box marginBottom={'-20%'}>
+    <Text  color={"white"} shadow={"dark-lg"} bg={"blackAlpha.700"}>Event:{e.dateEvent}</Text>
+    <Text color={"white"} shadow={"dark-lg"} bg={"blackAlpha.700"}>City:{e.locationCity}</Text>
+    <Text color={"white"} shadow={"dark-lg"}   bg={"blackAlpha.700"}>Location{e.locationEvent}</Text>
+    <Text noOfLines={[2]} color={"white"} shadow={"dark-lg"}  bg={"blackAlpha.700"}> Dis:{e.shortDisc}</Text>
+
     </Box>
-   
     <HStack>
-    <Link to ={`/pageticket/${e.id}`}>
-    <Button 
-    position={'relative'} top={"58px"} 
-    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Buy</Button>
-    </Link>
-
-    <Link to ={`/getticket/${e.id}`}>
+      <Link to={`/pageticket/${e.id}`}>
+   <Button  position={'relative'} top={"58px"} 
+    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Buy</Button></Link> 
+    <Link to = {`/getticket/${e.id}`}>
      <Button position={'relative'} top={"58px"} 
-    color={"BLACK"} width={"98px"} bg={"#A259ff"}>sell  </Button>
-    </Link>
-
+    color={"BLACK"} width={"98px"} bg={"#A259ff"}>Sell  </Button></Link>
     </HStack>
       </div>
     
