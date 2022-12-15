@@ -17,6 +17,7 @@
     "@types/react-dom": "^18.0.9",
     "framer-motion": "^6.5.1",
     "react": "^18.2.0",
+    "react-countdown-circle-timer": "^3.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.4.5",
@@ -50,11 +51,5 @@
       "last 1 safari version"
     ]
   },
-
   "proxy": "http://localhost:5000"
-
-
- 
-
-
 }
