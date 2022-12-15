@@ -1,14 +1,16 @@
 import React, { useState ,useEffect} from 'react'
 import { Stack,Box, Image,Text, HStack ,Heading,VStack, Button} from '@chakra-ui/react'
 import { Link } from 'react-router-dom';
+// import { useCountdown } from 'react-countdown-circle-timer'
 // import {  setTimeout } from 'timers';
+// import { UrgeWithPleasureComponent } from '../components/CountDown';
 export default function AddTickets(ticketid:any) {
 
     
 const [user, setUser] = useState([]);
-const [price,setPrice] = useState(0)
+const [price,setPrice] = useState(0);
 
-  
+
   ticketid =ticketid.ticketid
   const fetchData = async() => {
     try{
@@ -28,26 +30,35 @@ const [price,setPrice] = useState(0)
       console.log(e)
     }
   }
-
-  // const timeOut = () =>{
-  //   setInterval(()=>{
-  //     let a = user.map((e:any)=>e.price -= 1)
-  //    let z= a.map((e:any)=>e)
-  //     setPrice()
-  //     },2000)   
-  // } 
   
-
-  useEffect(() => {
+  const timeOut = () =>{
+    setTimeout(()=>{
+      let a = user.map((e:any)=>e.price -= 1)
+      
+     let z:any= a.map((e:any)=>e)
     
-    // timeOut()
+     setPrice(z[0]) 
+      },10000)   
+  } 
+  
+  
+  useEffect(() => {
     fetchData();
+
   },[])
   
-  // e.preventDefault()
+  timeOut() 
+
+
+
+
 
   return (
+    
      <div>
+      
+
+      
 
       
 
@@ -62,10 +73,7 @@ const [price,setPrice] = useState(0)
               </HStack>
               </Box>
               <Box bg={'#393737'} marginTop={'2'} w={'30%'} display={'flex'} justifyContent={'space-between'}>
-              <Text bg={'#393737'}>{
-              e.price
-              
-              }$</Text>
+
               <Text bg={'#393737'}>{e.seatsLocation}</Text>
               <Text bg={'#393737'}>{e.numberOfTicket}</Text>
             <Link to={'/d'}>  <Button  shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button></Link>

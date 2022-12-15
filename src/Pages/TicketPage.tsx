@@ -26,7 +26,6 @@ import {
   import { Link, useNavigate } from 'react-router-dom';
   import LoginForm from '../components/Forms/LoginForm';
 import Navbar from '../components/navbar/Navbar';
-import Testimag from './Testimag';
 
 
 function ConvertFile(files: FileList|null) {
