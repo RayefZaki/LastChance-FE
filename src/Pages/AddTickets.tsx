@@ -23,7 +23,6 @@ const [price,setPrice] = useState(0)
   //     console.log(e)
   //   }
   // }
-
   ticketid =ticketid.ticketid
   console.log('====================================');
   console.log(ticketid);
@@ -90,8 +89,9 @@ const [price,setPrice] = useState(0)
               }SR</Text>
               <Text bg={'#393737'}>{e.seatsLocation}</Text>
               <Text bg={'#393737'}>{e.numberOfTicket}</Text>
-            <Link to ={`/d/${e.id}`}>  <Button shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button> </Link>
-            {/* onClick={()=>{}} */}
+              {/* <Link to =""> */}
+              <Button shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button>
+              {/* </Link> */}
               </Box>
               </Box>
           </VStack> 

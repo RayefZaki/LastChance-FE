@@ -8,7 +8,9 @@ export default function PageTicket() {
   let {ticketid }=useParams();
 
  
-
+console.log('====================================');
+console.log(ticketid);
+console.log('====================================');
   // getByNameEventByAdminHandler
   const fetchData = async() => {
     try{
