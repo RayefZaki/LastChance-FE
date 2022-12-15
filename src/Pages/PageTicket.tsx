@@ -12,7 +12,7 @@ export default function PageTicket() {
   // getByNameEventByAdminHandler
   const fetchData = async() => {
     try{
-    console.log(ticketid);
+
     
      await fetch(`/api/v1/ticketAdmin/${ticketid}`,{
       // ${ticketid}
@@ -23,9 +23,7 @@ export default function PageTicket() {
      })
           .then((response) => response.json())
           .then((data) => setUser(data));
-       console.log('====================================');
-       console.log(user);
-       console.log('====================================');
+
     }catch(e){
       console.log(e)
     }
@@ -36,9 +34,7 @@ export default function PageTicket() {
     fetchData();
   },[])
   
-  console.log('====================================');
-  console.log(user.image as any);
-  console.log('====================================');
+
 // let a;
 //   const ff =()=>{
 //     user.map((e:any) =>(
@@ -48,7 +44,7 @@ export default function PageTicket() {
 //   ff();
      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 
-  console.log(ticketid)
+
   return (
     <div>
 

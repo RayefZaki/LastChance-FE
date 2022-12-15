@@ -51,7 +51,7 @@ function Router1() {
 
 
 <Routes>
-<Route path="/D" element={<TicketD/>}/>
+<Route path="/d/:ticketid" element={<TicketD/>}/>
 <Route path="/" element={<WelcomePage/>}/>
 <Route path="/home" element={<FIRST/>}/>
 <Route path="/Login" element={<LoginPage/>}/>

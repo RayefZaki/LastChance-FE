@@ -20,10 +20,14 @@ const [user, setUser] = useState([]);
   //     console.log(e)
   //   }
   // }
+
   ticketid =ticketid.ticketid
+  console.log('====================================');
+  console.log(ticketid);
+  console.log('====================================');
   const fetchData = async() => {
     try{
-    console.log(ticketid);
+   
     
      await fetch(`/api/v1/ticket/g/${ticketid}/`,{
       // ${ticketid}
@@ -58,7 +62,11 @@ const [user, setUser] = useState([]);
           <Box bg={'#393737'} shadow={'dark-lg'} margin={'0 auto 10px auto'} width={'80%'} padding={'2'} display={'flex'} justifyContent={'space-between'}
                borderRadius={'7'} color={'white'} marginTop={'1.5'}>
                 <Box>
-                  <HStack bg={'#393737'}>
+                  <HStack 
+                 
+                  
+                  key={e.id} bg={'#393737'}>
+                    
               <Text bg={'#393737'} fontSize={'2xl'}>{e.type}</Text>
               </HStack>
               </Box>
@@ -66,7 +74,8 @@ const [user, setUser] = useState([]);
               <Text bg={'#393737'}>{e.price}$</Text>
               <Text bg={'#393737'}>{e.seatsLocation}</Text>
               <Text bg={'#393737'}>{e.numberOfTicket}</Text>
-              <Button shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button>
+            <Link to ={`/d/${e.id}`}>  <Button shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button> </Link>
+            {/* onClick={()=>{}} */}
               </Box>
               </Box>
           </VStack> 
