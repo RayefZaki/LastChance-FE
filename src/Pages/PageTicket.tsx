@@ -52,12 +52,18 @@ export default function PageTicket() {
   return (
     <div>
 
-      <Stack>
-        <Box >
-          <Box >
+      <Stack w={'100%'}>
+        <Box w={'100%'}>
+          <Box  
+         
+          border={"2px"}
+overflow="hidden"
+height={"45vh"}
+width={"100%"}
+ >
           {/* <Image src='https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png' */}
-          <Img  src={user.image}
-           h={'40vh'} w={'100%'} objectFit={"contain"} marginTop={"0"} filter={'auto'} boxShadow={"-50px 0px 40px 10px #A259FF"} brightness='55%'></Img>
+          <Img  src={user.image} 
+           height={'100vh'} width={'100%'}  objectFit={'fill'}  marginTop={"0"} filter={'auto'} boxShadow={"-50px 0px 40px 10px #A259FF"} brightness='55%'></Img>
           
           </Box>
           <Link to={'/home'}>  <Button marginLeft={"80%"} marginTop={"10"} width={"15%"} shadow={'dark-lg'} bg={'#a259ff'}>back</Button></Link>
