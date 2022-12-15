@@ -9,10 +9,7 @@ export default function AddTickets(ticketid:any) {
     
 const [user, setUser] = useState([]);
 const [price,setPrice] = useState(0);
-let [seconds,setSeconds] = useState(0);
-  let [min,setMin] = useState(0);
-  let [hour,setHour] = useState(0)
-  let [day,setDay] = useState(0)
+
 
   ticketid =ticketid.ticketid
   const fetchData = async() => {
@@ -76,7 +73,7 @@ let [seconds,setSeconds] = useState(0);
               </HStack>
               </Box>
               <Box bg={'#393737'} marginTop={'2'} w={'30%'} display={'flex'} justifyContent={'space-between'}>
-              <Text bg={'#393737'}>{e.price}</Text>
+
               <Text bg={'#393737'}>{e.seatsLocation}</Text>
               <Text bg={'#393737'}>{e.numberOfTicket}</Text>
             <Link to={'/d'}>  <Button  shadow={'dark-lg'} bg={'#a259ff'}>Buy</Button></Link>

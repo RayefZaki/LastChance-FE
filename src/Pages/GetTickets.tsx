@@ -22,6 +22,7 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { Link, useNavigate, useParams } from 'react-router-dom';
+import UpLoadImag from './UpLoadImag';
 
 export default function GetTickets() {
     const [type, setType] = useState('');
@@ -65,7 +66,7 @@ export default function GetTickets() {
           duration: 2000,
           position: 'top',
         });
-        navigate('/login');
+        navigate('/home');
       } catch (error) {
         toast({
           title: 'Server Error !',
@@ -112,29 +113,27 @@ export default function GetTickets() {
       <FormControl id="Catogry">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'Catogry'}
-               onChange={(e) => setType(e.target.value)}  value={type} type="type" />
+              onChange={(e) => setType(e.target.value)}  value={type} type="type" />
       </FormControl>
       
            
-      <FormControl id="text">
-        <Input borderRadius={'2xl'} bg='white' 
-              color={'black'} placeholder={'image'} 
-              onChange={(e) => setImage(e.target.value)}  value={image} type="text"  />
-      </FormControl>
       <FormControl id="price">
         <Input borderRadius={'2xl'} bg='white' 
-              color={'black'} placeholder ={'Tickets'}
+              color={'black'} placeholder ={'Number Of Tickets'}
                onChange={(e) => setNumberOfTicket(+e.target.value)}   type="price" />
       </FormControl>
       <FormControl id="price">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'price'}
-               onChange={(e) => setPrice(+e.target.value)}   type="price" />
+              onChange={(e) => setPrice(+e.target.value)}   type="price" />
       </FormControl>
       <FormControl id="seatsLocation">
         <Input borderRadius={'2xl'} bg='white' 
               color={'black'} placeholder={'Seats Location'}
-               onChange={(e) => setSeatsLocation(e.target.value)}  value={seatsLocation} type="seatsLocation" />
+              onChange={(e) => setSeatsLocation(e.target.value)}  value={seatsLocation} type="seatsLocation" />
+      </FormControl>
+      <FormControl id="image">
+              <UpLoadImag></UpLoadImag>
       </FormControl>
       <Stack spacing={6}>
 
