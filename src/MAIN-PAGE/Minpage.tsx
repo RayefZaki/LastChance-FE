@@ -5,7 +5,11 @@ import './Mainpage.css'
 
 function Minpage() {
   const [user, setUser] = useState([]);
-  
+  let [seconds,setSeconds] = useState(0);
+  let [min,setMin] = useState(0);
+  let [hour,setHour] = useState(0)
+  let [day,setDay] = useState(0)
+
 
   const fetchData = async() => {
     try{
@@ -23,12 +27,31 @@ function Minpage() {
 
   useEffect(() => {
     fetchData();
-  },[])
+  },[]);
 
+  setTimeout(() => {
+    let a:any = seconds +=1
+    setSeconds(a)
+  }, 1000);
 
+  setTimeout(() => {
+    let a:any = min +=1
+    setMin(a)
+  }, 60000);
+
+  setTimeout(() => {
+    let a:any = hour +=1
+    setHour(a)
+  }, 3600000);
+
+  setTimeout(() => {
+    let a:any = day +=1
+    setDay(a)
+  }, 86400000);
 
   return (
     <>
+    
     {user.map((e:any)=>(
     <div className='CardM'>
        
@@ -62,7 +85,14 @@ function Minpage() {
     <HStack>
       <Link to={`/pageticket/${e.id}`}>
    <Button  position={'relative'} top={"58px"} 
+
+    // color={"BLACK"} width={"98px"} bg={"#A259ff"}>Sell</Button></Link> 
+
+
     color={"BLACK"} width={"98px"} bg={"#A259ff"}>Buy</Button></Link> 
+
+
+
     <Link to = {`/getticket/${e.id}`}>
      <Button position={'relative'} top={"58px"} 
     color={"BLACK"} width={"98px"} bg={"#A259ff"}>Sell  </Button></Link>

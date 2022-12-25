@@ -19,7 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { useCounter } from "@chakra-ui/counter"
 import Navbar from '../components/navbar/Navbar';
-import { useParams } from 'react-router-dom';
+import { useParams , useNavigate} from 'react-router-dom';
 import{ useEffect, useState } from 'react'
 
 
@@ -31,58 +31,69 @@ import{ useEffect, useState } from 'react'
 export default function ArticleList()  {
   const [user, setUser] =useState([]as any) ;
   const [user1, setUser1]=useState([]) as any;
-  const [n, setn]=useState(0) ;
+  const Navigate = useNavigate()
+  const color =useColorModeValue(
+    'radial(orange.600 1px, transparent 1px)',
+    'radial(orange.300 1px, transparent 1px)'
+  )
+  
 
   let {ticketid }=useParams();
-  
 
-  
- 
-  // setn()
+  const nn=()=>{
+    Navigate("/home")
+
+  }
 
   const fetchData = async() => {
     try{
     
-     await fetch(`/api/v1/ticket/gg/${ticketid}/`,{
+     const request = await fetch(`/api/v1/ticket/gg/${ticketid}/`,{
      
       method:"GET" ,
       headers: {
                  Authorization: 'Bearer ' + localStorage.getItem('token'),
               },
-     })
-          .then((response) => response.json())
-          .then((data) => setUser(data));
+            })
+            const data = await request.json();
+            setUser(data);
+            const a = data[0].eventByAdmin_id
+            fetchData1(a)
+        
+      
+          // return;
 
     }catch(e){
       console.log(e)
     }
   }
+  // console.log(user);
+  // console.log(user);
 
 
-  const fetchData1 = async() => {
+  const fetchData1 = async(a :any) => {
     try{
+   console.log(a);
    
-     const request = await fetch(`/api/v1/ticketAdmin/${user[0].eventByAdmin_id}`, {
+     const request = await fetch(`/api/v1/ticketAdmin/${a}`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('token'),
       },
     });
      const data = await request.json();
-     console.log('====================================');
-     console.log(data+"hello world");
+    //  console.log('====================================');
+    //  console.log(data+"hello world");
      setUser1(data);
         
-     console.log(user1)
-
+    //  console.log(user1)
+return;
     }catch(e){
       console.log(e)
       console.log("This file error occurred");
+      return
       
     }
   }
-
-
-
     const counter = useCounter({
         max: 10,
         min: 0,
@@ -92,8 +103,9 @@ export default function ArticleList()  {
       const imgg =user1.image
       const short =user1.shortDisc
 
+      // const a =user[0].eventByAdmin_id;
+
       useEffect(() => {
-        
       
       fetchData();
       // fetchData1();
@@ -101,6 +113,12 @@ export default function ArticleList()  {
       //   e.eventByAdmin_id =eventByAdmin_id
       // }
     },[]);
+
+   
+
+    // fetchData();
+    // fetchData1();
+    
 
 
   return (
@@ -138,8 +156,8 @@ export default function ArticleList()  {
                 borderRadius="lg"
 
    
-
-                src={"https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png"}
+src ={user1.image}
+                // src={"https://cdn.discordapp.com/attachments/1032613167446102037/1051708389924802600/image.png"}
                 
                 objectFit="contain"
               />
@@ -148,10 +166,7 @@ export default function ArticleList()  {
           <Box zIndex="1" width="100%" position="absolute" height="100%">
             <Box
               // eslint-disable-next-line react-hooks/rules-of-hooks
-              bgGradient={useColorModeValue(
-                'radial(orange.600 1px, transparent 1px)',
-                'radial(orange.300 1px, transparent 1px)'
-              )}
+              bgGradient={color}
               backgroundSize="20px 20px"
               opacity="0.4"
               height="100%"
@@ -200,7 +215,7 @@ Ticket details            </Link>
             color="white"
             fontSize="lg"
             marginBottom="3">
-        {short}
+        {/* {short} */}
           </Text>  
           <Box>
             <Text marginTop="10%">Number of ticket {counter.value}</Text>
@@ -217,7 +232,9 @@ Ticket details            </Link>
      
      <a href='https://www.paypal.com/sa/signin' target="_blank"><Button color="wihte" background="#A259FF"  width="20%" shadow="dark-lg" marginRight="4" > Pay </Button> </a>
              
-                  <Button color="wihte" background="blackAlpha.400" boxShadow="dark-lg" width="20%">BACK </Button>
+          
+                  <Button onClick={nn} color="wihte" background="blackAlpha.400" boxShadow="dark-lg" width="20%">BACK </Button>
+                
                   </Box>
         </Box>
         
